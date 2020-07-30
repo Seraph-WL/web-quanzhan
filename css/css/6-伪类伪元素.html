@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:nth-child(2) {
+            color: lawngreen;
+        }
+
+        li:last-child {
+            color: lightblue;
+        }
+
+        li:first-child {
+            color: lightcoral;
+        } /*first-child优先级大于nth-child(1)*/
+        li:hover{
+            font-size: 30px;
+        } /*移动到谁谁就大*/
+        div::after{
+            content: " world";
+            color: blue;
+        } /*伪元素选择器，after后面加个world，before就是前面加*/
+        .div1{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">hello</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>

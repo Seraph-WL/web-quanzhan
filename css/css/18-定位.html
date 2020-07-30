@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 400px;
+            height: 4000px;
+            border: 1px solid black;
+            margin-top: 20px;
+            margin-left: 20px;
+            position: relative;
+        }
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* float: right; 右浮动*/
+            /*position: relative; 相对于元素自己本身默认位置定位，写了relative才可以用下面四个，无负影响
+            top: 20px;
+            left: 30px;
+            right: 10px;
+            bottom: 40px;*/
+            /* position: absolute; 绝对定位，相对于父元素定位,相对于最近的已经定位的祖先元素，会脱离文档流
+            static 默认的的，相当于没定位
+            fixed  固定定位，相对于窗口进行定位
+            right: 0;
+            bottom: 0; */
+            position: absolute; /*当前元素脱离当前文档流*/
+            top: 0;
+            left: 0;
+        }
+        .div2{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+        .div3{
+            position: fixed; /*生成绝对定位的元素，相对于浏览器窗口进行定位，常用于返回顶部按钮*/
+            bottom: 100px;
+            right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="div1"></div>
+        <!-- <div class="div2"></div> -->
+        hello  <!--定位脱离文档流不会给文字让位置  文字被覆盖，浮动会-->
+    </div>
+    <div class="div3">返回顶部</div>
+</body>
+</html>

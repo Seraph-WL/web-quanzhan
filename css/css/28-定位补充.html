@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+    }
+    div{
+      /* 全屏红色 */
+      /* 方案一：定位 */
+      /* position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: red; */
+      /* 方案二：高宽 */
+      width: 100vw;  /*viewport-width  浏览器视口宽度*/
+      height: 100vh;   /*viewport-height  浏览器视口高度*/
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

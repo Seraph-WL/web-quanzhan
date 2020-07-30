@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            width: 30px;
+            height: 30px;
+            background-color: blue;
+            border-radius: 15px; /*4个半径为15的圆合成一个圆，分别位于正方形的四个角*/
+        }
+        i{
+            display: block; /*i标签为行元素，转换块元素*/
+            width: 18px;
+            height: 18px;
+            background-image: url("./img/icons_type.png");
+        }
+        li:nth-child(1) i{
+            background-position: -19px 0;
+        }
+        li:nth-child(2) i{
+            background-position: -38px 0;
+        }
+        fieldset{
+            border-width: 1px 0 0 0;
+            border-color: #dddddd;
+            border-style: solid;
+            text-align: center; /*使文字居中*/
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>其他方式登录</legend>
+    </fieldset> <!--fieldset等同于ul-->
+    <ul>
+        <li>
+            <i></i> <!--i标签多数用于小图标，很少用做斜体-->
+        </li>
+        <li>
+            <i></i> 
+        </li>
+        <li>
+            <i></i> 
+        </li>
+        <li>
+            <i></i> 
+        </li>
+    </ul>
+</body>
+</html>

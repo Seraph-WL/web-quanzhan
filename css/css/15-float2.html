@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            list-style: none; /*去掉1234前面的小黑点*/
+            float: left;  /*无缝隙*/
+        } 
+        .box div{
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            float: left;
+        }
+        p{
+            clear: both; /*清除浮动*/
+        }
+        .clearfix::after/*尾元素*/{
+            content: ""; /*必须加content*/
+            clear: both; /*不好使，仅作用于块元素*/
+            display: block; /*转换块元素，clear好使*/
+        } /*清除浮动，常用*/
+    </style>
+</head>
+<body>
+    <!--
+        浮动元素float会脱离文档流,会导致父元素高度塌陷
+    -->
+    <ul class="clearfix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div class="box clearfix">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <!--<p>HELLO WORLD</p>-->
+    </div>
+    hello world
+</body>
+</html>

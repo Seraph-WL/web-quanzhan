@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red; /*背景色*/
+            margin:0 auto;  
+            border:10px solid black;
+            padding: 30px;  /*外边框和内容区之间宽度,内边距，缩写同margin相同与margin顺时针同理*/
+            box-sizing: border-box; /*切换为怪异盒模型*/
+        }
+    </style>
+</head>
+<body>
+    <!--
+        标准盒模型：box-sizing: content-box 
+        怪异盒模型：box-sizing: border-box
+    -->
+    <div class="box">
+        hello world
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+        }
+        span{
+            width: 100px;
+            height: 100px;  /*行元素不接受width和height*/
+            margin-left: 100px;
+            margin-top: 100px; /*行元素中margin-top,bottom不好使，只接受left和right*/
+            padding-top: 100px; /*上下不会对其他元素造成影响，左右正常*/
+        }
+    </style>
+</head>
+<body>
+    <span>hello</span>  <!--行元素，多个元素占一行-->
+    <span>world</span>
+    <div>hello1</div>  <!--块元素，单个元素占一行-->
+    <div>world1</div>
+</body>
+</html>

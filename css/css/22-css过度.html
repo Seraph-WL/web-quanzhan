@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: width 1s ease; 过渡，监控宽度，动画效果ease，持续1s 
+            transition: all 1s ease; 监控高和宽all
+        }
+        div:hover{
+            width: 500px;
+            height: 300px;
+        } */
+        .div1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            display: none;  /*隐藏*/
+        }
+        .box:hover .div1{
+            display: block; /*鼠标指向box，div1显示*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        hello
+        <div class="div1"></div>
+    </div>
+</body>
+</html>

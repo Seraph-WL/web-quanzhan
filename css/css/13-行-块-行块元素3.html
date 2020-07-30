@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline; /*转换行元素，方框随内容变化*/
+            display: inline-block; /*转换为行块元素，方框不变化，每个方框有间隙；想要无间隙就把div放一行挨着*/
+            font-size: 12px; /*.box消去方框间隙的方法*/
+            color: red;
+        }
+        /*div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline; /*转换行元素，方框随内容变化*/
+            /* display: block; 转换为块元素 */
+            /*display: inline-block; /*转换行元素，方框不变化，每个方框有间隙；想要无间隙就把div放一行挨着*/
+        /* }*/ 
+        a{
+            color: yellow;
+        }
+        .box{
+            font-size: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>5
+            <a href="">hello</a> <!--标签-->
+        </div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>  
+    </div>
+   <!--
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+   --> 
+</body>
+</html>

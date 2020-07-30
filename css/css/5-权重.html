@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            color: green;
+        }
+        .div1{
+            color: blueviolet;
+        }
+        div{
+            color: red !important;
+        }
+        #box2{
+            color: hotpink;
+        }
+        .p1 .span1{
+            color: lawngreen;
+        }
+        *{
+            font-weight: bolder;
+        }  /*id不用重名，尽量不要使用内联样式，那个位置留给js !important谨慎使用*/
+    </style>  <!--优先执行  !important10000>内联样式1000>id选择器100>类选择器10>标签选择器1>*(通配选择器)0-->
+</head>
+<body>
+    <div class="div1" id="box" style="color: hotpink;">hello world</div>
+    <div class="p1">
+        <span class="span1" id="box2">fellow</span>
+    </div>
+    
+</body>
+</html>

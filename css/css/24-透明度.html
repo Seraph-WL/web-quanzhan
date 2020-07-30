@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .div1{
+      width: 150px;
+      height: 150px;
+      /* background-color: red; */
+      background-color: rgba(244,0,0, 0.5);  /*rgba第四个数值调透明度，当前元素透明，内部元素无变化*/
+      position: absolute; /*定位，脱离文档流，改变特性*/
+      top: 0;
+      left: 0;
+      /* opacity: 0.5;  当前元素透明度，区间0~1,0为完全透明，1为完全不透明，当前元素内部内容也会变透明 */
+    }
+    .box{
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+      position: relative; /*定位，不影响其他元素*/
+    }
+    .div1 span{
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    hello world
+    <div class="div1">
+      <span>你好</span>
+    </div>
+  </div>
+</body>
+</html>
