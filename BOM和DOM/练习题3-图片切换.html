@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style: none;  /*去除小点*/
+    }
+    .clearfix::after{
+      content: "";
+      display: block; /*清除浮动*/
+      clear: both;
+    }
+    .box{
+      width: 600px;
+      border: 1px solid #666; /*边框*/
+      margin: 100px auto;
+    }
+    .big-img{
+      text-align: center; /*居中*/
+      border-bottom: 1px solid #666; /*加下边框*/
+    }
+    .big-img img{
+      height: 220px; /*会等比缩放 不设宽度*/
+    }
+    .small-img li{
+      float: left; /*清除浮动*/
+      width: 25%;
+      text-align: center;
+      box-sizing: border-box;
+      border-right: 1px solid #666; /*右边框*/
+    }
+    .small-img li:last-child{
+      border-right: 0; /*控制最后一个右边框像素为0*/
+    }
+    .small-img li img{
+      width: 120px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="big-img">
+      <img id="bimg" src="./image/slider1.jpg" alt="">
+    </div>
+    <div class="small-img">
+      <ul class="clearfix">
+        <li>
+          <img src="./image/slider1.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/slider2.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/slider3.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/slider4.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    var smallImg = document.getElementsByClassName("small-img")[0].getElementsByTagName("img"); //集合不能直接绑定事件
+    var bigImg = document.getElementById("bimg");
+    for(var i=0;i<smallImg.length;i++){
+      smallImg[i].onmouseover = function(){
+        var thisAttr = this.getAttribute("src");
+        // console.log(this.getAttribute("src")); //获取事件源的 src
+        bigImg.setAttribute("src",thisAttr);
+      }
+    }
+  </script>
+</body>
+</html>
