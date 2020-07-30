@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active{
+      color: red;
+      font-size: 40px;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+<body>
+  <div class="test test2 test3">hello</div>
+  <script>
+    var oDiv = document.getElementsByTagName("div")[0];
+    // console.log(oDiv);
+    // oDiv.style.color = "red";
+    // oDiv.style.fontSize = "40px";
+    // var cName = oDiv.className;  //获取class名字
+    // console.log(cName);
+    // // oDiv.className = "active";  //改变整个class的名字
+    // oDiv.className = cName + " active";  //后加名字前有括号
+
+    // var cName = oDiv.classList;
+    // console.log(cName); //列表
+    oDiv.classList.remove("test2"); //移除
+    oDiv.classList.add("active"); //添加class名
+    oDiv.classList.replace("test3","aaa"); //替换
+  </script>
+</body>
+</html>

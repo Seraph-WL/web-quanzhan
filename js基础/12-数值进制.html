@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var num1 = 0x10;  //16进制
+    var num2 = 0b010;  //2进制
+    var num3 = 010;  //8进制，0后面如果能按照8进制解析就是8进制，否则按10进制解析，个别浏览器也会有特殊情况
+    var num4 = 095;  //10进制
+    // console.log(num1);
+    // console.log(num2);
+    console.log(parseInt(num2,10));  //转换成10进制 ,只能从低往高转（2~36之间进制可转换）
+
+    // var num1 = 2;
+    // var num2 = 10;
+    // console.log(num1.toString());  //数值转换成字符串
+    // console.log(num1.toString(2)); //转换成2进制
+    // console.log(num2.toString(16));  //转换成16进制
+  </script>
+</body>
+</html>

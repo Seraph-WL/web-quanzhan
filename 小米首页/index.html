@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1951368_4e9wou904tx.css">
+  <style>
+    /* css reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      /*去除a标签内容的下划线*/
+    }
+
+    .container {
+      /* 公共集 */
+      width: 1226px;
+      margin: 0 auto;
+    }
+    li{
+      list-style: none;
+    }
+    body{
+      font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    }
+    .clearfix::after{  /*解决导航条出现的高度塌陷问题*/
+      content: "";  /*清除浮动*/
+      display: block;
+      clear: both;
+    }
+
+    /* 顶部区域 */
+    .top-bar {
+      background-color: #333;
+      height: 40px;
+      font-size: 12px;
+    }
+
+    .top-bar a {
+      color: #b0b0b0;
+      display: inline-block;
+      height: 40px;
+    }
+
+    .top-bar span {
+      margin: 0 5px;
+      color: #424242;
+    }
+
+    .top-bar .tb-left,.top-bar .tb-right {
+      height: 40px;
+      line-height: 40px;
+      /*分组选择器，同时控制左右垂直居中*/
+    }
+
+    .top-bar .tb-left {
+      float: left;
+    }
+    .top-bar .tb-left a:hover{
+      color: #fff;
+    }
+
+    .top-bar .tb-left .download-app {
+      position: relative;
+    }
+
+    .top-bar .download-app:hover .appcode {
+      /* height: auto; 根据内容自动撑开，auto无过渡效果 */
+      height: 160px;
+      z-index: 10;
+    }
+
+    /* 下载app的小三角形 */
+    .top-bar .download-app:hover .drop {
+      /* height: auto; 根据内容自动撑开，auto无过渡效果 */
+      height: 160px;
+      display: block;
+      /*移入显示三角形*/
+    }
+
+    .top-bar .download-app .drop {
+      display: none;
+      /*正常情况下不显示*/
+      left: 50%;
+      bottom: 0;
+      margin-left: -8px;
+      border-width: 8px;
+      border-color: transparent transparent #fff transparent;
+      position: absolute;
+      border-style: solid;
+    }
+
+    .top-bar .tb-left .appcode {
+      width: 124px;
+      background-color: white;
+      box-shadow: 0 1px 5px #aaa;
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      margin-left: -62px;
+      text-align: center;
+      height: 0;
+      overflow: hidden;
+      /*隐藏内部元素*/
+      transition: all 0.3s ease;
+      /*过渡效果*/
+    }
+
+    .top-bar .appcode img {
+      margin: 18px auto 12px;
+      display: block;
+      /*转换块元素*/
+    }
+
+    .top-bar .tb-right {
+      float: right;
+    }
+    .top-bar .tb-right a:hover{
+      color: #fff;
+    }
+
+    .top-bar .tb-right .cart-bar {
+      display: inline-block;
+      /*使购物车与登录在同一行*/
+      height: 40px;
+      width: 120px;
+      margin-left: 15px;
+      background-color: #424242;
+      text-align: center;
+      /*购物车图标居中*/
+      position: relative;
+    }
+
+    .top-bar .tb-right .cart-menu {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      width: 316px;
+      height: 0px;
+      line-height: 100px;
+      /*使购物车白框文字居中*/
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+      overflow: hidden;
+      /*购物车溢出部分隐藏*/
+      transition: all 0.3s ease;
+    }
+
+    .top-bar .tb-right .cart-bar:hover {
+      background-color: #fff;
+      z-index: 10;
+    }
+
+    .top-bar .cart-bar:hover a {
+      color: #ff6700;
+    }
+
+    .top-bar .cart-bar:hover .cart-menu {
+      height: 100px;
+    }
+
+    /* header start */
+    .header .header-logo {
+      width: 62px;
+      height: 55px;
+      margin-top: 22px;
+      /* background-color: red; */
+      float: left;
+    }
+    .header .header-logo .logo {
+      position: relative;
+      width: 55px;
+      height: 55px;
+      background-color: #ff6700;
+      overflow: hidden;
+    }
+    .header .header-logo .logo::before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 55px;
+      height: 55px;
+      background-image: url("./img/mi-logo.png");
+      background-position: center; /*小mi logo图片居中*/
+      transition: all 0.1s linear;  /*liner 动画效果匀速*/
+    }
+    .header .header-logo .logo:hover::before{
+      transform: translateX(100%);
+    }
+    .header .header-logo .logo::after{
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: ""; /*使用伪元素必须写content，确保插入成功，需要的话可在双引号中加入文字*/
+      display: block;
+      width: 55px;
+      height: 55px;
+      background-image: url("./img/mi-home.png");
+      background-position: center; /*小房子图片居中*/
+      transform: translateX(-100%);  /*左移当前元素宽度100%*/
+      transition: all 0.1s linear;
+    }
+    .header .header-logo .logo:hover::after{
+      transform: translateX(0); /*回到一开始小米的位置*/
+    }
+    .header .header-nav {
+      width: 620px;
+      /* background-color: blue; */
+      float: left;
+      height: 88px;
+      margin: 0;
+      padding: 12px 0 0 175px;
+      font-size: 16px;
+    }
+    .header .header-nav li{
+      float: left;
+      list-style-type: none;
+      padding: 26px 10px 38px;
+      color: #333;
+      cursor: pointer; /*鼠标移动到这有小手标志*/
+    }
+    .header .header-nav li:hover{
+      color: #ff6700;
+    }
+    .header .header-search {
+      width: 296px;
+      height: 50px;
+      margin-top: 25px;
+      /* background-color: green; */
+      float: right;
+      border: 1px solid #e0e0e0;
+      position: relative;
+    }
+    .header-search .hs-text{
+      position: absolute;
+      top: 14px;
+      right: 62px;
+    }
+    .header-search .hs-text span{
+      margin-left: 5px;
+      padding: 0 5px;
+      font-size: 12px;
+      background: #eee;
+      color: #757575; /*方框小字体及背景*/
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .header-search .hs-text span:hover{
+      color: #fff;
+      background-color: #ff6700;  /*移入方框小字体变色*/
+    }
+    .header-search input{
+      display: block;
+      float: left;
+      width: 223px;
+      height: 48px;
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 48px;
+      border: 0;
+      outline: none; /*去掉蓝框*/
+    }
+    .header-search button{
+      /* input和button转换块元素浮动以后，搜索图标上去了（应该的位置） */
+      display: block;
+      float: left;
+      width: 52px;
+      height: 50px;
+      line-height: 24px;
+      background-color: rgba(0, 0, 0, 0);
+      color: #616161;
+      border-width: 0 0 0 1px;
+      border-color: #e0e0e0;
+      border-style: solid;
+    }
+    .header-search button i{
+      font-size: 22px;
+      font-weight: bolder;   /*搜索图标变大加粗*/
+    }
+    /* slider-bar start */
+    .slider-bar{
+      position: relative;
+      height: 460px;
+    }
+    .slider-bar .slider-nav{
+      width: 234px;
+      height: 460px;
+      /* background-color: red; */
+      background-color: rgba(105, 101, 101, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+    .slider-bar .slider-nav ul{
+      padding: 20px 0;
+    }
+    .slider-bar .slider-nav li{
+      padding-left: 30px;
+      height: 42px;
+      line-height: 42px;
+      color: #fff;
+      position: relative;
+    }
+    .slider-bar .slider-nav li:hover{
+      background-color: #ff6700;
+      cursor: pointer;
+    }
+    .slider-bar .slider-nav i{
+      position: absolute;
+      right: 20px;
+      top: 0;
+    }
+    .slider-bar .slider-img{
+      width: 1226px;
+      height: 460px;
+      background-color: blue;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .slider-bar .si-img{
+      position: absolute;
+    }
+    .slider-bar .si-arr{
+      position: absolute;
+      width: 992px;
+      left: 234px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .slider-bar .si-arr .sia-left,.slider-bar .si-arr .sia-right{
+      width: 41px;
+      height: 69px;
+      /* background-color: rgba(0, 0, 0, .6); */
+      text-align: center;
+      line-height: 69px; /*图片上面黑色小框*/
+      cursor: pointer;
+    }
+    .slider-bar .sia-left:hover,.slider-bar .sia-right:hover{
+      background-color: rgba(0, 0, 0, .6);
+    }
+    .slider-bar .sia-left:hover i,.slider-bar .sia-right:hover i{
+      color: #fff;
+    }
+    .slider-bar .sia-left i,.slider-bar .sia-right i{
+      font-size: 30px;
+      color: #aaa;
+    }
+    .slider-bar .si-arr .sia-left{
+      float: left;
+      border-radius: 0 5px 5px 0;
+    }
+    .slider-bar .si-arr .sia-right{
+      float: right;
+      border-radius: 5px 0 0 5px;  /*方框有圆角*/
+    }
+    .slider-bar .si-bullets{
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
+    }
+    .slider-bar .si-bullets span{
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      margin: 0 4px;
+      border:2px solid rgba(255, 255, 255, .4);
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, .4);
+    }
+    .slider-bar .si-bullets span:hover{
+      background-color: rgba(0, 0, 0, 0);
+    }
+    /* hero-hub start */
+    .hero-hub{
+      margin-top: 14px;
+    }
+    .hero-hub .hh-left{
+      float: left;
+      width: 234px;
+      height: 170px;
+      /* background-color: red; */
+      background-color: #5f5750;
+      overflow: hidden;
+    }
+    .hero-hub .hh-left img{
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin: 0 auto 4px;
+    }
+    .hero-hub .hh-left li{
+      float: left;
+      width: 70px;
+      height: 64px;
+      padding: 0 3px;
+      color: #fff;
+      opacity: .7; /*文字透明度*/
+      text-align: center;
+      padding-top: 18px;
+      font-size: 12px;
+      position: relative;
+    }
+    .hero-hub .hh-left li::after{
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 1px;
+      height: 70px;
+      background-color: #665e57;
+    }
+    .hero-hub .hh-left li::before{
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 6px;
+      width: 64px;
+      height: 1px;
+      background-color: #665e57;
+    }
+    .hero-hub .hh-left li:hover{
+      display: inline-block;
+      color: rgb(216, 41, 41);
+      cursor: pointer;
+    }
+    .hero-hub .hh-right{
+      margin-left: 14px;
+      float: left;
+      height: 170px;
+      width: 978px;
+      /* background-color: blue; */
+    }
+    .hero-hub .hh-right li{
+      float: left;
+      margin-right: 15px;
+    }
+    .hero-hub .hh-right li:last-child{
+      margin: 0;
+    }
+    .hero-hub .hh-right img{
+      display: block;
+      width: 316px;
+      height: 170px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="container">
+      <div class="tb-left">
+        <a href="javascript:void(0)">小米商城</a><span class="sep">|</span>
+        <!--javascript:void(0),一个空的，无链接-->
+        <a href="#a">MIUI</a><span class="sep">|</span>
+        <!--#,某点的链接,#接id-->
+        <a href="">IoT</a><span class="sep">|</span>
+        <a href="">云服务</a><span class="sep">|</span>
+        <a href="">金融</a><span class="sep">|</span>
+        <a href="">有品</a><span class="sep">|</span>
+        <a href="">小爱开放平台</a><span class="sep">|</span>
+        <a href="">企业团购</a><span class="sep">|</span>
+        <a href="">资质证照</a><span class="sep">|</span>
+        <a href="">协议规则</a><span class="sep">|</span>
+        <a href="" class="download-app">
+          下载app
+          <span class="drop"></span>
+          <div class="appcode">
+            <img src="./img/download.png" alt="小米商城" width="90" height="90">
+            <span>小米商城app</span>
+          </div>
+        </a><span class="sep">|</span>
+        <a href="">Select Location</a>
+      </div>
+      <div class="tb-right">
+        <a href="">登录</a><span class="sep">|</span>
+        <a href="">注册</a><span class="sep">|</span>
+        <a href="">消息通知</a>
+        <div class="cart-bar">
+          <a href="">
+            <i class="iconfont icon-cart"></i>
+            购物车(0)
+          </a>
+          <div class="cart-menu">
+            <span>购物车中还没有商品，赶紧选购吧！</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header clearfix container"> <!--clearfix解决高度塌陷-->
+    <div class="header-logo">
+      <div class="logo"></div>
+    </div>
+    <div class="header-nav">
+      <ul>
+        <li>小米手机</li>
+        <li>Redmi 红米</li>
+        <li>电视</li>
+        <li>笔记本</li>
+        <li>家电</li>
+        <li>路由器</li>
+        <li>智能硬件</li>
+        <li>服务</li>
+        <li>社区</li>
+      </ul>
+    </div>
+    <div class="header-search">
+      <div class="hs-text">
+        <span>小米9 Pro 5G</span>
+        <span>Redmi Note 8</span>
+      </div>
+      <input type="text">
+      <button><i class="iconfont icon-search"></i></button>
+    </div>
+  </div>
+  <div class="slider-bar container">
+    <div class="slider-nav">
+      <ul>
+        <li>手机 电话卡<i class="iconfont icon-arrow"></i></li>
+        <li>电视 盒子<i class="iconfont icon-arrow"></i></li>
+        <li>笔记本 显示器 平板<i class="iconfont icon-arrow"></i></li>
+        <li>家电 插线板<i class="iconfont icon-arrow"></i></li>
+        <li>出行 穿戴<i class="iconfont icon-arrow"></i></li>
+        <li>智能 路由器<i class="iconfont icon-arrow"></i></li>
+        <li>电源 配件<i class="iconfont icon-arrow"></i></li>
+        <li>健康 儿童<i class="iconfont icon-arrow"></i></li>
+        <li>耳机 音箱<i class="iconfont icon-arrow"></i></li>
+        <li>生活 箱包<i class="iconfont icon-arrow"></i></li>
+      </ul>
+    </div>
+    <div class="slider-img">
+      <div class="si-img">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6ef43cf9f138a7fc3a39273d7e3d13b6.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="" srcset="">
+      </div>
+      <div class="si-arr">
+        <div class="sia-left"><i class="iconfont icon-jiantou"></i></div>
+        <div class="sia-right"><i class="iconfont icon-arrow"></i></div>
+      </div>
+      <div class="si-bullets">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <!-- slider-img在slider-nav上面，使生成界面nav在img上面,或者css中使用z-index -->
+  </div>  
+  <div class="hero-hub clearfix container">
+    <div class="hh-left">
+      <ul>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&amp;h=48" alt="小米秒杀">
+          小米秒杀
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&amp;h=48" alt="企业团购">
+          企业团购
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&amp;h=48" alt="F码通道">
+          F码通道
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&amp;h=48" alt="米粉卡">
+          米粉卡
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&amp;h=48" alt="以旧换新">
+          以旧换新
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&amp;h=48" alt="话费充值">
+          话费充值
+        </li>
+      </ul>
+    </div>
+    <div class="hh-right">
+      <ul>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d158f243b54d5ec68dd2ac72bd24555d.jpg?w=632&amp;h=340" alt="">
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fbff319c7dd00e75c9758acf248d3784.jpg?w=632&amp;h=340" alt="">
+        </li>
+        <li>
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/816a66edef10673b4768128b41804cae.jpg?w=632&amp;h=340" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

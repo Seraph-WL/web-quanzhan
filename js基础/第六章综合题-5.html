@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 方案一
+    // function merge(s1,s2){
+    //   var arr1 = s1.split("");
+    //   var arr2 = s2.split("");
+    //   var maxLength = arr1.length>arr2.length?arr1.length:arr2.length;
+    //   var resArr = [];
+    //   for(var i=0;i<maxLength;i++){
+    //     resArr.push(arr1[i]);
+    //     resArr.push(arr2[i]);
+    //   }
+    //   return resArr.join("");  //数组转换字符串
+    // }
+    // console.log(merge("1234","abcdefg"));
+
+    // 方案二
+    function merge(s1,s2){
+      var arr1 = s1.split("");
+      var arr2 = s2.split("");
+      var minLength = arr1.length>arr2.length?arr2.length:arr1.length;
+      var maxArr = arr1.length>arr2.length?arr1:arr2;
+      var resArr = [];
+      for(var i=0;i<minLength;i++){
+        resArr.push(arr1[i]);
+        resArr.push(arr2[i]);
+      }
+      var resetArr = maxArr.slice(minLength);  //截取数组
+      resArr = resArr.concat(resetArr);  //括号内数组拼接到该数组后面
+      return resArr.join("");  //数组转换字符串
+    }
+    console.log(merge("1234","abcdefg"));
+  </script>
+</body>
+</html>

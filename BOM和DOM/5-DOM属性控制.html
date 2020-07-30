@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a id="alink" class="active" href="https://www.baidu.com">百度</a>
+  <button id="btn">change</button>
+  <script>
+    var oBtn = document.getElementById("btn");
+    var oLink = document.getElementById("alink");
+
+    // 鼠标按 相应效果
+    // oBtn.onclick = function(){
+    //   oLink.innerText = "淘宝"; //改变名字
+    //   console.log(oLink.getAttribute("href"));  //获取网址,href可替换 获取属性值
+    //   oLink.setAttribute("href","https://www.taobao.com");  //改变网址,修改属性值
+    // }
+
+    // 鼠标移入 相应效果
+    oBtn.onmouseover = function(){
+      console.log(oLink.getAttribute("id"));  
+    }
+  </script>
+</body>
+</html>

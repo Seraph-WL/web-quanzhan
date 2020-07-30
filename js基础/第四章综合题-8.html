@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    for(var i=1000;i<10000;i++){
+      var a =Math.floor(i/1000);
+      var b =Math.floor(i/100)%10;
+      var c =Math.floor(i/10)%10;
+      if(i%13==0 && c+b==a)
+      document.write(i+"</br>");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  // BOM浏览器对象模型
+
+
+
+
+
+
+    // for(var i=10;i>=0;i--){
+    //   console.log(i);
+    // }
+    // function foo(){
+
+    // }
+
+
+    // 回调函数
+    // setTimeout(function(){
+    //   console.log(10);
+    //   setTimeout(function(){
+    //     console.log(9);
+    //   },1000);
+    // },1000); //定时 ，间隔1秒，倒计时，执行一次
+    // clearTimeout();  //对应的清除定时函数
+
+
+
+
+
+
+    // var i = 10;
+    // var timer = setInterval(function(){
+    //   console.log(i);
+    //   i--;
+    // },1000);  //循环执行，没隔1秒就执行，定时
+    // var timer2 = setInterval(function(){
+    //   console.log(i);
+    //   i--;
+    // },1000);  //循环执行，没隔1秒就执行，定时
+    // console.log(timer,timer2);
+
+    // // clearInterval  清除定时函数
+
+    var i = 10;
+    var timer = setInterval(function(){
+      console.log(i);
+      i--;
+      if(i<0){
+        clearInterval(timer);
+      }
+    },1000);  //循环执行，没隔1秒就执行，定时
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <a id="alink" href="https://www.baidu.com">百度</a>
+  <div>hello</div>
+  <button id="btn">button</button>
+  <script>
+    var oAlink = document.getElementById("alink");
+    var oBtn = document.getElementById("btn");
+    var oDiv = document.getElementsByTagName("div")[0];
+
+    // 事件三要素：事件源 事件处理函数 事件对象
+    // oBtn.oncontextmenu = function(){
+    //   console.log("右键");  //按鼠标右键才有反应
+    // }
+
+    // 点击事件，点击按钮触发效果
+    // oBtn.onclick = function(){
+    //   oDiv.innerHTML = "<h1>Hello World!</h1>"
+    //   console.log("123");
+    // }
+    // oBtn.onclick = function(){
+    //   console.log("hello");
+    // }  //一次只能绑定一个事件，只实现最后一个
+
+
+
+    // oBtn.addEventListener("click",function(){
+    //   oDiv.innerHTML = "<h1>Hello World!</h1>"
+    // })
+    // oBtn.addEventListener("click",function(){
+    //   console.log("hello");
+    // })  //可绑定多个事件
+
+    // oBtn.onclick = function(e){
+    //   // 事件对象是function默认参数
+    //   console.log(e); //获取鼠标点击的位置
+    // }
+    // oBtn.oncontextmenu = function(e){
+    //   // 事件对象是function默认参数
+    //   console.log(e); //获取鼠标点击的位置
+    //   e.preventDefault(); //右键不显示菜单
+    //   //return false; //与上面的e效果一样
+    // }
+
+
+    oAlink.onclick = function(e){
+      console.log("百度");
+      e.preventDefault();  //点击百度不跳转，阻止a标签跳转功能
+    }
+  </script>
+</body>
+</html>

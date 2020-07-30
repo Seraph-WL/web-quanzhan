@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 200px;
+      height: 300px;
+      background-color: gray;
+      display: none;  /*隐藏自定义菜单*/
+      position: fixed;  /*视口定位*/
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+  </div>
+  <script>
+    var oBox = document.getElementById("box")
+    document.oncontextmenu = function(e){
+      // console.log("hello");
+      oBox.style.display = "block"; //右键显示自定义菜单
+      // console.log(e.clientX,e.clientY); //获取鼠标位置
+      // 鼠标右键在哪按 菜单在哪出现
+      oBox.style.top = e.clientY+"px"; //纵轴 加单位才生效
+      oBox.style.left = e.clientX+"px"; //横轴 加单位才生效
+      e.preventDefault(); //隐藏默认菜单
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var timer = new Date();
+    // console.log(timer); //获取当前时间
+    var year = timer.getFullYear();
+    // console.log(timer.getFullYear());  //获取年份
+    // console.log(timer.getMonth());  //获取月份 从0开始
+    // console.log(timer.getDate);  //日期
+    if(year%4==0 && year%100!=0 || year%400==0){
+      console.log(year+"是闰年");
+    }else{
+      console.log(year+"不是闰年");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var a = 10;
+    // function foo(){
+    //   var a = 20;
+    // }
+    // foo();
+    // console.log(a);  //a=10
+
+
+    // function foo(){
+    //   var a = 10;  //a局部变量,函数内部有效
+    //   console.log(a);
+    // }
+    // foo();
+    // console.log(a);  //会报错，没定义
+
+    // var a = 10;
+    // function foo(){
+    //   a = 20;  //不是定义,是调用，不算局部变量
+    // }
+    // foo();
+    // console.log(a);  //输出a为20
+
+
+    // function foo(){
+    //   a = 10;
+    // }
+    // foo();
+    // console.log(a);  //输出a为10
+
+    // window  
+    // a = 10;  //未定义时，默认定义到全局变量下
+    // console.log(a);
+
+    var a = 10;
+    function foo(){
+      var b = 20;
+      console.log(a);
+    }
+    // console.log(window.a);
+    console.log(window.b);
+    window.foo();
+  </script>
+</body>
+</html>

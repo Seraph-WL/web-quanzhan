@@ -1,0 +1,245 @@
+ /* css reset start */
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    /*去掉a标签的下划线*/
+}
+
+li {
+    list-style: none;
+}
+
+/* css reset end */
+/* header start */
+.header {
+    width: 1130px;
+    margin: 0 auto;
+    height: 98px;
+    /* background-color: red; */
+}
+
+.header .header-logo {
+    width: 200px;
+    height: 98px;
+    /* background-color: blue; 辅助找定位 */
+    background-image: url("../img/mistore_logo.png");
+}
+
+/* header end */
+/* body start */
+.body .body-bg {
+    width: 100%;
+    height: 588px;
+    background-image: url("../img/djk.jpg");
+    background-position: center;
+    /*背景图片定位，居中*/
+}
+
+.body .login-wrapper {
+    width: 1130px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.body .login-bar {
+    margin: 0 auto 20px;
+    margin-right: 0;
+    width: 410px;
+    height: 556px;
+    /* background-color: red; 测试确定位置用 */
+    background-color: white;
+}
+
+.body .login-bar .lb-top {
+    padding: 27px 0 24px;
+    text-align: center;
+    font-size: 24px;
+    color: #666;
+}
+
+.body .lb-top a {
+    color: #666;
+}
+
+.body .lb-top span {
+    border: 1px solid #e0e0e0;
+    margin: 0 42px 0 35px;
+}
+
+.body .lb-top a:hover {
+    color: #f56600;
+}
+
+.body .lb-top .active {
+    color: #f56600;
+}
+
+.body .lb-center {
+    width: 348px;
+    margin: 10px auto 0;
+    /* background-color: rgb(255, 94, 0);
+    height: 100px; */
+}
+
+.body .lb-center input {
+    width: 313px;
+    height: 22px;
+    font-size: 16px;
+    padding: 13px 16px 13px 14px;
+    margin-bottom: 14px;
+    /*两方框留空隙*/
+    outline: none;
+    /*去掉蓝色框*/
+}
+
+.body .button-bar {
+    padding-top: 10px;
+    margin-bottom: 14px;
+}
+
+.body .button-bar button {
+    cursor: pointer;
+    /*cursor鼠标移入的状态，pointer表示小手*/
+    width: 100%;
+    height: 50px;
+    background-color: #ff6700;
+    color: #fff;
+    border: 0;
+    /*去掉登录多余的边框*/
+}
+
+.body .form-text .ft-left {
+    float: left;
+}
+
+.body .form-text .ft-right {
+    float: right;
+    color: #999;
+}
+
+/*浮动，使立即注册那块和手机短信登录/注册在同一行*/
+.body .form-text a {
+    color: #999;
+    font-size: 14px;
+}
+
+.body .form-text a:hover {
+    color: #ff6700;
+}
+
+.body .form-text .active {
+    color: #ff6700;
+}
+
+.body .lb-bottom {
+    padding-top: 143px;
+    width: 348px;
+    margin: 0 auto;
+    /*左右居中*/
+}
+
+.body .lb-bottom fieldset {
+    border-width: 1px 0 0 0;
+    border-color: #fff;
+    text-align: center;
+}
+
+.body .lb-bottom legend {
+    color: #bbb;
+}
+
+.body .lb-bottom ul {
+    text-align: center;
+    /*使4个小圆圈居中*/
+    padding-top: 10px;
+}
+
+.body .lb-bottom li {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #0288d1;
+    /*所有图标为蓝色，下面qq默认为该蓝色*/
+    display: inline-block;
+    /*使四个纵向排列的小圆圈横向排列*/
+    margin: 0 17px;
+}
+
+.body .lb-bottom i {
+    display: block;
+    /*行元素转换为块元素，要不然宽高不好使*/
+    margin: 4px auto 0;
+    background-image: url("../img/icons_type.png");
+    width: 18px;
+    height: 18px;
+}
+
+.body .lb-bottom li:nth-child(1) i {
+    background-position: -19px 0;
+    /*显示qq图标*/
+}
+
+.body .lb-bottom li:nth-child(2) {
+    background-color: #d32f2f;
+    /*新浪红色*/
+}
+
+.body .lb-bottom li:nth-child(2) i {
+    background-position: -38px 0;
+    /*显示新浪图标*/
+}
+
+.body .lb-bottom li:nth-child(3) {
+    background-color: #0ae;
+    /*支付宝蓝色*/
+}
+
+.body .lb-bottom li:nth-child(3) i {
+    margin-top: 6px;
+    margin-left: 4px;
+    width: 25px;
+    /*由于支付宝图标大，改小点*/
+    background-position: -57px 0;
+    /*显示支付宝图标*/
+}
+
+.body .lb-bottom li:nth-child(4) {
+    background-color: #00d20d;
+    /*微信绿色*/
+}
+
+.body .lb-bottom li:nth-child(4) i {
+    margin-top: 6px;
+    width: 24px;
+    /*微信同理*/
+    background-position: -83px 0;
+    /*显示微信图标*/
+}
+
+/* body end */
+/* footer start */
+.footer{
+    text-align: center; /*水平居中*/
+    padding-top: 80px;
+    font-size: 14px;
+}
+.footer .lang-select-list li{
+    display: inline-block;  /*使该网页下面的字水平摆放*/
+}
+.footer .lang-select-list a{
+    color: #333;
+    padding: 0 10px;
+}
+.footer p{
+    padding: 10px 0;
+}
+/* footer end */

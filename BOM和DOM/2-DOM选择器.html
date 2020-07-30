@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      color: red;
+    }
+    .div1{
+      font-size: 40px;
+    }
+    #box{
+      font-weight: bolder;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1" id="box">hello</div>
+  <div>world</div>
+  <p class="div1">123</p>
+  <script>
+    // DOM文档对象模型，BOM的子集之一
+  // var aDiv = document.getElementsByTagName("div");  //根据标签获取元素，放到集合 多元素
+  // aDiv[0].innerText = "Hello";  //不可加标签
+  // aDiv[0].innerHTML = "<h1>Hello</h1>";  //可加标签
+  // var aDiv = document.getElementsByClassName("div1");  //根据类名获取元素，放到集合 多元素
+  // aDiv[0].innerHTML = "<h1>你好</h1>" 
+  // console.log(aDiv);
+  // console.log(aDiv[0]);
+
+  var oDiv = document.getElementById("box");  //根据id获取元素，只能单个元素
+  console.log(oDiv);
+  </script>
+</body>
+</html>
