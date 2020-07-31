@@ -111,7 +111,7 @@
       }
       navList[n].className = "active";
       imgList[n].className = "active";
-      nowIndex = n;
+      nowIndex = n; //准备工作做完，最后确定状态
     }
     
     //数字按钮绑定事件
@@ -130,7 +130,7 @@
 
     //右按钮
     arrNav[1].onclick = function(){
-      var thisIndex = nowIndex ==4?-1:nowIndex;
+      var thisIndex = nowIndex ==4?-1:nowIndex; //索引
       changeImg(thisIndex+1)
     }
 
@@ -157,6 +157,7 @@
     // //数字按钮绑定事件
     // for(var i=0;i<navList.length;i++){
     //   navList[i].index = i;
+    // 只在移入时才有效果
     //   navList[i].onmouseover = function(){
     //     for(var j=0;j<navList.length;j++){
     //       navList[j].className = "";
@@ -183,7 +184,7 @@
     // }
     // //右按钮
     // arrNav[1].onclick = function(){
-    //   // nowIndex = nowIndex == 5?0:nowIndex;
+    //   // nowIndex = nowIndex == 5?0:nowIndex; //实现右键到5时会转为0，下面模5取余也可实现该效果
     //   navList[nowIndex%5].className = "";
     //   navList[(nowIndex+1)%5].className = "active";
 

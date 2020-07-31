@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 300px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <script>
+    var oBox = document.getElementById("box");
+    function foo(){
+      var boxWidth = oBox.offsetWidth; //获取当前元素宽度
+      oBox.style.width = boxWidth + 10 + "px";  //设置当前元素宽度
+      requestAnimationFrame(foo);  //window下的 会在页面下一次重排的时候
+      // 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。
+      // 该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行
+    }
+    oBox.onmouseover = function(){  //移入是时候触发
+      foo();
+    }
+
+    // function foo(){
+    //   console.log("com");
+    // }
+    // requestAnimationFrame(foo)
+
+    // setTimeout(function(){
+    //   console.log("com");
+    // },16)
+    // requestAnimationFrame和setTimeout相似 前者更精准
+  </script>
+</body>
+</html>

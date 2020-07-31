@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 50px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    var timer = null;
+    oBox.onmouseover = function(){
+      var _this = this;
+      clearInterval(timer); //防止鼠标快速划入划出时抖动 避免同时加减
+      timer = setInterval(function(){
+        var nowWidth = _this.offsetWidth;
+        if(nowWidth==500){
+          clearInterval(timer);
+        }else{
+          _this.style.width = nowWidth+10+"px";
+        }
+      },16);
+    }
+    oBox.onmouseout = function(){
+      var _this = this;
+      clearInterval(timer); //防止鼠标快速划入划出时抖动
+      timer = setInterval(function(){
+        var nowWidth = _this.offsetWidth;
+        if(nowWidth==300){
+          clearInterval(timer);
+        }else{
+          _this.style.width = nowWidth-10+"px";
+        }
+      },16)
+    }
+  </script>
+</body>
+</html>

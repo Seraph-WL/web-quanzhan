@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 30px;
+      border:1px solid black;
+      border-radius: 10px;  /*去掉尖角*/
+      overflow: hidden; /*超出部分隐藏 多余的蓝色进度条*/
+      position: relative; /*定位 相对于数字 自己本身不受影响*/
+    }
+    .pro{
+      height: 30px;
+      width: 0;
+      background-color: blue;  /*进度条*/
+    }
+    .text{
+      position: absolute; /*定位 使数字在进度条上面*/
+      top:5px;
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="pro"></div>
+    <span class="text">0%</span>
+  </div>
+  <button id="btn">start</button>
+  <script>
+    var oBtn = document.getElementById("btn"); //按钮
+    var oPro = document.getElementsByClassName("pro")[0];  //蓝色进度条
+    var oText = document.getElementsByClassName("text")[0];  //数字百分比
+
+
+    // oBtn.onclick = function(){
+    //   var num = 0;
+    //   var timer = null;
+    //   timer = setInterval(function(){
+    //     if(num == 100){
+    //       clearInterval(timer);
+    //     }else{
+    //       var proWidth = oPro.offsetWidth;
+    //       oPro.style.width = proWidth + 3 + "px"; //设置当前元素宽度
+    //       oText.innerText = (++num) + "%";
+    //     }
+    //   },16)
+    // }
+
+    var num = 0;
+    function foo(){
+      if(num < 100){
+        var proWidth = oPro.offsetWidth; //获取当前元素宽度
+        oPro.style.width = proWidth + 3 + "px";  //加3确保和百分比同步
+        oText.innerText = (++num) + "%"; //进度递增
+        requestAnimationFrame(foo); //类似递归 使进度条一直加载
+      }
+    }
+
+    oBtn.onclick = function(){
+      foo();
+    }
+  </script>
+</body>
+</html>

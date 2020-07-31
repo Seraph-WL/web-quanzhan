@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div>
+
+  </div>
+  <script>
+    var oDiv = document.getElementsByTagName("div")[0];
+
+    oDiv.onmousedown = function(){
+      console.log("down"); //onmousedown鼠标按下
+    }
+    oDiv.onmouseup = function(){
+      console.log("up");  //onmouseup鼠标弹起
+    }
+    oDiv.onmousemove = function(e){
+      console.log(e.clientX,e.clientY); //鼠标坐标
+      // onmousemove鼠标移动
+      console.log("move");
+    }
+  </script>
+</body>
+</html>

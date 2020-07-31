@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 300px;
+      height: 50px;
+      background-color: red;
+      /* transition: width 1s ease; */
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    //设置元素宽度 this.style.width
+    //获取元素宽度 this.offsetWidth
+    //获取元素高度 this.offsetHeight  
+    oBox.onmouseover = function(){
+      // this.style.width = "500px";
+      var that = this;
+      console.log(this.offsetWidth); //获取当前方框宽度
+    //   var nowWidth = 300;
+    //   // 两个函数嵌套的时候，内部函数指向window，this指向内部 内部函数可调用外部函数局部变量
+    //   setInterval(function(){  
+    //     nowWidth += 10;
+    //     that.style.width = nowWidth+"px";
+    //   },16); //16ms适应人的眼部 刷新率
+    }
+  </script>
+</body>
+</html>

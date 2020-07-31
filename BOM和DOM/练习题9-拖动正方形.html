@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: fixed;  /*相对于当前视口进行定位*/
+    }
+  </style>
+</head>
+<body>
+  <div id="box"></div>
+  <script>
+    var oBox = document.getElementById("box");
+
+    oBox.onmousedown = function(e){
+      var topNum = e.clientY - oBox.offsetTop;  
+      //顶部：oBox.offsetTop定位才能得到 e.clientY - oBox.offsetTop=窗口到鼠标位置距离-窗口到正方形外边沿距离
+      var leftNum = e.clientX - oBox.offsetLeft;
+      //左部：oBox.offsetLeft定位才能得到 e.clientX - oBox.offsetLeft=窗口到鼠标位置距离-窗口到正方形外边沿距离
+      document.onmousemove = function(e){
+        //用document而不用oBox：防止快速拖动时，正方形不被拖动(超出oBox的范围)
+        oBox.style.top = e.clientY - topNum + "px";
+        oBox.style.left = e.clientX - leftNum + "px";
+      }
+    }
+    oBox.onmouseup = function(){
+      document.onmousemove = null;
+    }
+
+    
+  </script>
+</body>
+</html>
