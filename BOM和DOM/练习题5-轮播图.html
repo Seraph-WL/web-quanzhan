@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* reset */
+    *{
+      margin: 0;
+      padding:0;
+    }
+    html{
+      background-color: #000; /*背景为黑色*/
+    }
+    li{
+      list-style: none; /*去掉小圆点*/
+    }
+    .box{
+      width: 490px;
+      height: 170px;
+      border:4px solid #fff; /*白边 背景为黑色才能看出*/
+      margin:0 auto; /*水平居中*/
+      /* overflow: hidden;   */ /*多余部分隐藏*/
+      position: relative;  /*定位 不改变位置*/
+    }
+    .box .img li{
+      display: none; /*隐藏*/
+    }
+    .box .img .active{
+      display: block; /*显示*/
+    }
+    .nav{
+      position: absolute;  /*相对于box进行定位*/
+      bottom: 10px;
+      width: 100%;
+    }
+    .nav-left{
+      float: left; /*浮动*/
+    }
+    .nav-right{
+      float: right;  /*浮动*/
+    }
+    .nav span{
+      cursor: pointer; /*小手*/
+      display: inline-block; /*转换行块元素，无需浮动 span行元素无大小，必须转换*/
+      width: 20px;
+      height: 20px;
+      background-color: #f90;
+      color: #fff;
+      border-radius: 50%;  /*元素变为圆圈*/
+      text-align: center; /*水平居中*/
+      line-height: 20px; /*行距*/
+      margin: 0 3px;
+    }
+    .nav .active{
+      background-color: red;  /*变为active 背景色变为红色*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="img">
+      <ul>
+        <li class="active">
+          <img src="./image/01.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/02.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/03.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/04.jpg" alt="">
+        </li>
+        <li>
+          <img src="./image/05.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+    <div class="nav">
+      <div class="nav-left">
+        <span>&lt;</span> <!--&lt;左箭头-->
+        <span>&gt;</span> <!--&gt;右箭头-->
+      </div>
+      <div class="nav-right">
+        <span class="active">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    var oBox = document.getElementsByClassName("box")[0];
+    var imgList = document.getElementsByClassName("img")[0].getElementsByTagName("li");
+    var navList = document.getElementsByClassName("nav-right")[0].getElementsByTagName("span");
+    var arrNav = document.getElementsByClassName("nav-left")[0].getElementsByTagName("span");
+    var nowIndex = 0;
+    var timer = null;
+
+    //切换图片
+    function changeImg(n){
+      for(var j=0;j<navList.length;j++){
+        navList[j].className = "";
+        imgList[j].className = "";
+      }
+      navList[n].className = "active";
+      imgList[n].className = "active";
+      nowIndex = n;
+    }
+    
+    //数字按钮绑定事件
+    for(var i=0;i<navList.length;i++){
+      navList[i].index = i;
+      navList[i].onmouseover = function(){
+        changeImg(this.index)
+      }
+    } 
+    //方向按钮绑定事件
+    //左按钮
+    arrNav[0].onclick = function(){
+      var thisIndex = nowIndex ==0?5:nowIndex;
+      changeImg(thisIndex-1)
+    }
+
+    //右按钮
+    arrNav[1].onclick = function(){
+      var thisIndex = nowIndex ==4?-1:nowIndex;
+      changeImg(thisIndex+1)
+    }
+
+    //移入停止定时函数
+    oBox.onmouseover = function(){
+      clearInterval(timer)
+    }
+
+    //移出开始定时函数
+    oBox.onmouseout = function(){
+      play();
+    }
+
+    //开始定时播放
+    function play(){
+      timer = setInterval(function(){
+        arrNav[1].onclick()
+      },1000)
+    }
+    play();
+
+    // onmouseout
+
+    // //数字按钮绑定事件
+    // for(var i=0;i<navList.length;i++){
+    //   navList[i].index = i;
+    //   navList[i].onmouseover = function(){
+    //     for(var j=0;j<navList.length;j++){
+    //       navList[j].className = "";
+    //       imgList[j].className = "";
+    //     }
+    //     this.className = "active";
+    //     imgList[this.index].className = "active";
+    //     nowIndex = this.index;
+    //   }
+    // } 
+
+    // //方向按钮绑定事件
+    // //左按钮
+    // arrNav[0].onclick = function(){
+
+    //   nowIndex = nowIndex == 0?5:nowIndex; 
+    //   navList[nowIndex%5].className = "";
+    //   navList[(nowIndex-1)%5].className = "active";
+
+    //   imgList[nowIndex%5].className = "";
+    //   imgList[(nowIndex-1)%5].className = "active";
+
+    //   nowIndex --;
+    // }
+    // //右按钮
+    // arrNav[1].onclick = function(){
+    //   // nowIndex = nowIndex == 5?0:nowIndex;
+    //   navList[nowIndex%5].className = "";
+    //   navList[(nowIndex+1)%5].className = "active";
+
+    //   imgList[nowIndex%5].className = "";
+    //   imgList[(nowIndex+1)%5].className = "active";
+
+    //   nowIndex ++;
+    // }
+  </script>
+</body>
+
+</html>

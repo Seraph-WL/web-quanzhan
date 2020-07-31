@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset */
+    *{
+      margin:0;
+      padding:0;
+    }
+    li{
+      list-style: none; /*去掉小点*/
+    }
+    .clearfix::after{
+      content: "";
+      display: block;
+      clear:both; /*清除浮动*/
+    }
+    .box{
+      border:1px solid #666;
+      width: 500px;
+      margin: 100px auto; /*水平居中*/
+    }
+    .nav{
+      height: 50px;
+      background-color: #000;
+      color: #fff; /*导航框*/
+    }
+    .nav li{
+      float: left; /*浮动*/
+      width: 100px;
+      height: 50px;
+      line-height: 50px; /*垂直居中*/
+      text-align: center; /*水平居中*/
+    }
+    .nav .active{
+      background-color: #ddd; /*初始界面导航条背景颜色 下面为字体颜色*/
+      color: #000;
+    }
+    .content{
+      padding:20px; /*使第一节内容等有间距 不紧贴边*/
+    }
+    .content .text{
+      display: none; /*隐藏文字内容*/
+    }
+    .content .active{
+      display: block; /*转换为块元素 p为块元素 使隐藏的文字内容显示出来 冲掉原来的隐藏的*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="nav">
+      <ul class="clearfix"> <!--防止高度塌陷 clearfix-->
+        <li class="nav-list active">第一节课</li>  <!--默认被选中的-->
+        <li class="nav-list">第二节课</li>
+        <li class="nav-list">第三节课</li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="text active">
+        <p>第一节内容</p>
+        <p>第二节内容</p>
+        <p>第三节内容</p>
+      </div>
+      <div class="text">
+        <p>第四节内容</p>
+        <p>第五节内容</p>
+        <p>第六节内容</p>
+      </div>
+      <div class="text">
+        <p>第七节内容</p>
+        <p>第八节内容</p>
+        <p>第九节内容</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    var navList = document.getElementsByClassName("nav-list"); //导航列表
+    var contentList = document.getElementsByClassName("text");  //下面内容的
+
+
+    // 绑定事件
+    for(var i=0;i<navList.length;i++){
+      navList[i].index = i; //给每一个导航链接 绑定索引
+      navList[i].onmouseover = function(){ //给每一个导航链接 绑定事件
+        for(var j=0;j<navList.length;j++){
+          contentList[j].classList.remove("active"); //active移除  下面内容
+          navList[j].classList.remove("active");  //active移除 导航
+        }
+        this.classList.add("active"); //样式的添加  classList返回类列表中类的数量,该属性是只读的 
+        // add添加属性，在元素中添加一个或多个类名，如果指定的类名已存在，则不会添加
+        contentList[this.index].classList.add("active"); //内容的添加  this.index索引 
+      }
+    }
+  </script>
+</body>
+
+</html>

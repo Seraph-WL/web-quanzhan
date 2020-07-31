@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+    <li>e</li>
+    <li>f</li>
+    <li>g</li>
+  </ul>
+  <script>
+    var aLi = document.getElementsByTagName("li");
+    for(var i=0;i<aLi.length;i++){
+      // aLi[i].aabjj = i;
+      aLi[i].index = i; //添加属性， 绑定索引 index是自己起的名
+      aLi[i].onmouseover = function(){
+        // 循环结束后才绑定事件，i=7
+        // console.log(i);
+        console.log(this.index);
+      }
+    }
+
+
+
+
+    // 给对象添加属性并且调用方法去调用那个属性
+    // var person = {
+    //   name:"小明",
+    //   shouAge:function(){
+    //     console.log(this.age);
+    //   }
+    // }
+    // person.age = 20;
+    // // console.log(person);
+    // person.shouAge();
+  </script>
+</body>
+</html>

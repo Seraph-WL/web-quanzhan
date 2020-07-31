@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      box-sizing: border-box;
+      padding-top:200px; /*150px hello就在怪异盒模型里面 padding-top过大会把内容挤出去（高度写死情况） 高度不写死模型会被撑开*/
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p>hello</p>
+  </div>
+</body>
+</html>
