@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>
+      <div>
+        <span>hello</span>
+      </div>
+    </li>
+  </ul>
+  <script>
+    function foo(nodes){
+      if(nodes.nodeType == 1){  //当前是元素节点
+        console.log(nodes.nodeName);
+      }
+      // console.log(nodes.childNodes);  
+      for(var i = 0;i<nodes.childNodes.length;i++){
+        if(nodes.childNodes[i].nodeType == 1){  //判断子元素是否还有元素节点
+          foo(nodes.childNodes[i])
+        }
+      }
+    }
+    var oUl = document.getElementsByTagName("ul")[0];
+    foo(oUl);
+    // foo(document);
+  </script>
+</body>
+</html>

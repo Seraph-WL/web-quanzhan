@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="oul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <!-- <li>4</li> -->
+  </ul>
+  <script>
+    var oUl = document.getElementById("oul");
+    var aLi1 = oUl.getElementsByTagName("li");
+    var aLi2 = oUl.childNodes;  //所有子节点，包括文本节点，注释也可以获取到
+    var aLi3 = oUl.children;
+    // aLi1和aLi3 获取结果一样 都是元素节点
+
+    // console.log(aLi1,aLi2,aLi3)
+    console.log(aLi2[1].nodeType); //判断当前节点类型
+    console.log(aLi2[1].nodeName); //判断当前节点的名字
+
+    console.log(oUl.lastElementChild); //获取元素节点 最后一个
+    console.log(oUl.lastChild);  //获取包含文本节点 最后一个
+    
+    console.log(oUl.firstElementChild); //仅获取元素节点 第一个
+    console.log(oUl.firstChild); //获取包含文本节点 第一个
+    
+    
+
+    
+  </script>
+</body>
+</html>

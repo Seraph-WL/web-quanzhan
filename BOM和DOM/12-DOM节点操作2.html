@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* #li4 ~ li  控制所有后面元素 */
+    #li4 + li{  /*控制紧跟着后面的元素   相邻兄弟选择器*/
+      color:  red;
+    }
+    /* .box  div */
+    .box > div{  /*后代选择器  >只控制亲子代  中间空格控制所有子代*/
+      border:1px solid black;
+      padding:20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div>
+      <div>hello</div>
+    </div>
+  </div>
+  <ul id="oul">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li id="li4">4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script>
+    var li4 = document.getElementById("li4");
+    // 兄弟节点
+    console.log(li4.previousElementSibling); //仅获取元素节点 上一个
+    console.log(li4.previousSibling); //获取包含文本节点 上一个
+
+    console.log(li4.nextElementSibling); //仅获取元素节点 下一个
+    console.log(li4.nextSibling); //获取包含文本节点 下一个
+
+
+    
+    
+  </script>
+</body>
+</html>

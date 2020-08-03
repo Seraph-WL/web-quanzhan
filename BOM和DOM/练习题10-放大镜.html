@@ -15,7 +15,7 @@
       background-image: url("./image/niu.png");
       background-size: contain;  /*图片充满内部框*/
       position: relative;
-      overflow: hidden;
+      overflow: hidden;  /*小半透明白框 溢出不可见*/
     }
     .big-img{
       margin-left: 20px; /*两图片中间产生距离*/
@@ -23,7 +23,7 @@
       width: 400px;
       height: 400px;
       background-image: url("./image/niu.png");
-      background-size: 800px 800px;
+      background-size: 800px 800px;  /*改变背景图大小*/
     }
     .mosk{
       width: 200px;
@@ -47,7 +47,7 @@
 
     smallImg.onmousemove = function(e){
       //第一步 当前值为 mosk元素中心点定位到鼠标处
-      var thisTop = e.clientY-100;
+      var thisTop = e.clientY-100;  //e是事件对象
       var thisLeft = e.clientX-100;
 
       //第二步 判断mosk 越界问题
