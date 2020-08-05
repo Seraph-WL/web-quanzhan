@@ -14,6 +14,7 @@
   </style>
 </head>
 <body>
+  <!-- 下拉列表  multiple加这个会把框打开选项全部漏出来 -->
   <!-- <select name="" id="mul" multiple>
     <option value="">黑大</option>
     <option value="">林大</option>
@@ -26,32 +27,35 @@
   <input type="checkbox" name="" id="chec">
 
   <script>
-    // ondblclick 双击
 
-    var chec = document.getElementById("chec");
-    chec.onchange = function(){
-      console.log(this.checked);
-    }
-    
-    // var oInp = document.getElementById("inp");
-    // // oInp.onkeyup = function(){
-    // //   console.log("up",this.value);
-    // // }
-    // oInp.onkeydown = function(){
-    //   console.log("down",this.value);
-    // }
 
     // var oSel = document.getElementById("mul");
     // var aOpt = document.getElementsByTagName("option");
-    // oSel.onchange = function(){
-    //   // console.log(this.selectedIndex);
+    // oSel.onchange = function(){  //onchange 事件也可用于单选框与复选框改变后触发的事件
+    //   // console.log(this.selectedIndex); //this.selectedIndex被选中当前那项索引，仅适用于单选
       
     //   for(var i = 0;i<aOpt.length;i++){
-    //     console.log(aOpt[i].selected);
+    //     console.log(aOpt[i].selected); //selected被选中就是true，否则是false
     //   }
       
     // }
 
+    // ondblclick 双击
+
+    // 文本框值的获取
+    // var oInp = document.getElementById("inp");
+    // // oInp.onkeyup = function(){ //键盘按键抬起来
+    // //   console.log("up",this.value);
+    // // }
+    // oInp.onkeydown = function(){  //键盘按键按下去
+    //   console.log("down",this.value);
+    // }
+
+
+    var chec = document.getElementById("chec");
+    chec.onchange = function(){
+      console.log(this.checked);  //当前复选框的选中状态 true或false
+    }
   </script>
 </body>
 </html>

@@ -35,10 +35,10 @@
     for (var i = 0; i < upBtn.length; i++) {
       //向上按钮
       upBtn[i].onclick = function () {
-        var thisDiv = this.parentElement;
-        var preDiv = thisDiv.previousElementSibling;
-        if(preDiv){
-          oBox.insertBefore(thisDiv,preDiv);
+        var thisDiv = this.parentElement; //父元素
+        var preDiv = thisDiv.previousElementSibling;  //父元素上一个
+        if(preDiv){  //上一个元素存在
+          oBox.insertBefore(thisDiv,preDiv); //将thisDiv挪到preDiv前面
         }else{
           console.log("已经到达顶部");
         }
@@ -46,11 +46,11 @@
       //向下按钮
       downBtn[i].onclick = function(){
         var thisDiv = this.parentElement;
-        var nextDiv = thisDiv.nextElementSibling;
+        var nextDiv = thisDiv.nextElementSibling; //父元素下一个
         if(nextDiv){
-          oBox.insertBefore(nextDiv,thisDiv)
+          oBox.insertBefore(nextDiv,thisDiv); //将preDiv挪到thisDiv前面
         }else{
-          console.log("到达底部");
+          console.log("已经到达底部");
         }
       }
     }

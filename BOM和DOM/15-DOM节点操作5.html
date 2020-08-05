@@ -22,17 +22,22 @@
      var oBox2 = document.getElementsByClassName("box2")[0];
      var oDiv2 = document.getElementsByClassName("div2")[0];
 
-    //  oBox2.appendChild(oDiv1); 
+    //  oBox2.appendChild(oDiv1); //将div1整体移到了div2后面
 
 
-    // var newDiv1 = oDiv1.cloneNode(true);
+    // var newDiv1 = oDiv1.cloneNode(true); //克隆oDiv1但不克隆里面的文本hello（不包含子节点），
+                                            // 也不克隆span 括号内默认false（不填）加了true以后整体全部克隆
     // console.log(newDiv1);
     // oBox2.appendChild(newDiv1);
+
+
+    // oBox2.replaceChild(oDiv1,oDiv2);  //将div1整体移到div2，并将div2覆盖
+
 
     // var newDiv1 = oDiv1.cloneNode(true);
     // oBox2.replaceChild(newDiv1,oDiv2);
 
-    oBox2.removeChild(oDiv2);
+    oBox2.removeChild(oDiv2); //整体移除
 
     
   </script>
