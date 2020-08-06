@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #can{
+      background-color: #000;
+      
+    }
+  </style>
+</head>
+<body>
+  <!-- 画布 -->
+  <canvas id="can" width="500" height="500"></canvas>  <!--在这写宽高直线不会被拉伸-->
+  <script>
+    var oCan = document.getElementById("can");
+    var context = oCan.getContext("2d"); //获取上下文  创建 context 对象
+
+    context.lineWidth = 3;  //直线的宽度
+    context.strokeStyle="white"  //直线的颜色
+
+    // 画直线
+    context.beginPath();  //在哪落笔 准备开始
+    context.moveTo(10,10); //往哪画
+    context.lineTo(60,60);  //画到哪
+    context.stroke();  //开始画
+
+
+  </script>
+</body>
+</html>

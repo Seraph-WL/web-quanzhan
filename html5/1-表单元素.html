@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="xxx.php">
+    <input type="text" name="username" placeholder="用户名" autofocus autocomplete="on">   
+    <!--autofocus自动选中  name="username"和autocomplete="on"同时使用会把以前输入过得username显示出来-->
+    <input type="date" name="timer">   <!--日期选择器-->
+    <!-- <input type="url" name="url"> 
+    <input type="email" name="email"> URL是网址，email是邮箱格式不对会提示并且无法提交表单-->
+
+    <!-- submit表单中的按钮可提交 -->
+    <input type="submit" value="提交">
+    <button type="submit">提交</button>
+    <!-- button单纯的按钮不可提交 -->
+    <input type="button" value="按钮">
+    <button type="button">按钮</button>
+    <div>
+      <!-- <input type="number" max="10" min="0" step="2">
+      <input type="range" max="10" min="0" step="2"> 中间为圆形的进度条-->
+      <input type="color"> <!--获取元素颜色，点击那个框可以换颜色默认黑色-->
+
+      <!-- datalist 元素规定输入域的选项列表。
+           列表是通过 datalist 内的 option 元素创建的。
+           如需把 datalist 绑定到输入域，请用输入域的 list 属性引用 datalist 的 id： -->
+      <input type="text" list="school">
+      <datalist id="school">
+        <option value="黑大">黑大</option>
+        <option value="理工">理工</option>
+        <option value="农大">农大</option>
+      </datalist>
+    </div>
+    <header>hello</header>  <!--语义化标签-->
+
+    <!-- controls 出现播放按钮 -->
+    <!-- audio 元素能够播放声音文件或者音频流。 -->
+    <!-- 视频  <video> 与 </video> 之间插入的内容是供不支持 video 元素的浏览器显示的 -->
+    <audio controls src="http://antiserver.kuwo.cn/anti.s?rid=MUSIC_82128154&response=res&format=mp3|aac&type=convert_url&br=128kmp3&agent=iPhone&callback=getlink&jpcallback=getlink.mp3"></audio>
+    <video controls src="./表单.mp4"></video>
+  </form>
+</body>
+</html>
