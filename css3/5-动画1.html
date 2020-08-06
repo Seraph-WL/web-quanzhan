@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+      border:2px dashed black;
+      margin: 100px auto;
+    }
+    .div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      /* animation: foo 1s ease; */
+      animation-name: foo;  /*检索或设置对象所应用的动画名称*/
+      animation-duration: 2s; /*检索或设置对象动画的持续时间*/
+      animation-timing-function: linear; /*检索或设置对象动画的过渡类型  linear：线性过渡*/
+      animation-iteration-count: infinite; /*检索或设置对象动画的循环次数   infinite：无限循环*/
+      /* animation-delay: 1s;   检索或设置对象动画延迟的时间*/
+      /* animation-fill-mode: forwards;   检索或设置对象动画时间之外的状态    forwards：设置对象状态为动画结束时的状态*/
+      /* animation-direction: reverse;    检索或设置对象动画在循环中是否反向运动   reverse：反方向运行*/
+    }
+    .div1:hover{
+      animation-play-state: paused;  /*检索或设置对象动画的状态。   paused：暂停*/
+    }
+    /* @keyframes是关键帧 foo动画名称 从0度过渡到360度*/
+    @keyframes foo{
+      from{
+        transform: rotate(0);
+      }
+      to{
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="div1"></div>
+  </div>
+</body>
+</html>

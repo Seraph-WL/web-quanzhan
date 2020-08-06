@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      color: rgba(0,0,0,0.3);
+      width: 500px;
+      height: 500px;
+      border:30px solid rgba(0,0,0,0.3);
+      background: url("./../img/xmad2.jpg") no-repeat 100px 100px/100px 100px; /*no-repeat背景图像不平铺*/
+      /* background-image: url("./../img/xmad2.jpg"),url("./../img/1.jpg");
+      background-position: 0 0,300px 300px;
+      background-repeat: no-repeat;    background-repeat：指定背景图像如何填充*/
+      padding:30px;
+      /*background-origin: padding-box border-box content-box   background-origin：指定背景图像从元素的哪个区域作为显示的原点*/
+      /* border-box：从border区域（含border）开始显示背景图像。
+         padding-box：从padding区域（含padding）开始显示背景图像。
+         content-box：从content区域开始显示背景图像。 */
+      /* background-origin: padding-box; */
+      /* background-size: contain;   background-size：指定背景图像尺寸*/
+      /* contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。 */
+      /* background-clip:content-box;     background-clip：指定背景图像向外裁剪的区域    content-box：从content区域开始向外裁剪背景*/
+      /* -webkit-background-clip: text; */
+      /* text：从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果 */
+      /* 使用方式：-webkit-background-clip: text */
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>hello world!</h1>
+  </div>
+</body>
+</html>

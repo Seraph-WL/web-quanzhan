@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 弹性盒模型 */
+    /* 注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。 */
+    *{
+      margin:0;
+      padding:0;
+    }
+    ul{
+      display: flex; /*横向排列，不换行宽度会被压缩*/
+      height: 100vh;
+      /* flex-direction: column; 纵向排列 */
+      /* flex-direction: row; 默认横向排列 */
+      /* flex-direction: row-reverse; 反向靠右排列类似右浮动*/
+      /* flex-wrap: wrap; 宽度不够会换行，宽度不会被压缩 */
+      /* justify-content: flex-end; 右对齐默认flex-start左对齐 */
+      /* justify-content: center; 主轴居中（横轴，水平）
+      align-items: center;  交叉轴居中（纵轴，垂直）*/
+      /* justify-content: space-between;  两端对齐 */
+      /* justify-content: space-around; 每个两边距离相等*/
+      /* align-content: stretch; stretch（默认值）：轴线占满整个交叉轴*/
+    }
+    li{
+      /* flex-grow: 1; */
+      /* flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+      如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。
+      如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。 */
+      list-style: none;  /*去掉小点*/
+      /* width: 200px; */
+      flex-basis: 200px;  /*flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间*/
+      height: 200px;
+      background-color: red;
+      text-align: center;
+      line-height: 200px;
+      font-size: 65px;
+      color: white;
+    }
+    li:nth-child(odd){
+      background-color: yellow; /*奇数为黄色*/
+    }
+    li:nth-child(2){
+      /* flex-grow: 2; */
+      /* flex-shrink: 0;  宽度要给定
+      flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+      如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。
+      如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。 */
+      order:-1
+    }
+    li:nth-child(3){
+      
+      order:-2;  /*order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。*/
+    }
+    li:nth-child(5){
+      align-self: center; /*交叉轴    align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性*/
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+</body>
+</html>

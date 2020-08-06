@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 400px;
+      border:2px dashed black;
+      margin: 100px auto;
+    }
+    .div1{
+      width: 400px;
+      height: 400px;
+      background-color: red;
+      /* transform: rotate(45deg) scale(0.5); */ /*旋转45度 缩放0.5*/
+      transform: rotate(45deg);  /*旋转45度*/
+      transform-origin: 0 0;  /*围绕（0,0）点旋转*/
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="div1"></div>
+  </div>
+</body>
+</html>

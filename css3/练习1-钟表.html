@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* reset start */
+    *{
+      margin: 0;
+      padding:0;
+    }
+    /* 最外层边框 */
+    .box{
+      width: 404px;
+      height: 404px;
+      border:2px dashed black;
+      margin:100px auto;
+    }
+    /* 圆框表盘 */
+    .clock{
+      width: 400px;
+      height: 400px;
+      border: 2px solid black;
+      border-radius: 50%; /*变圆*/
+      position: relative;
+    }
+    .kd li{
+      list-style: none; /*去除小点*/
+      width: 2px;
+      height: 6px;
+      background-color: black;
+      position: absolute;  /*相对于clock定位*/
+      top: 0;
+      left: 50%;  /*定位到同一点 left为50%是水平居中*/
+      margin-left: -1px;  /*水平居中 和上left一起用*/
+      transform-origin: 1px 200px;  /*1px相对于width的一半，200培训相对于.clock的一半  当前元素的圆心点*/
+    }
+    /* 每中间隔四个加长 */
+    .kd li:nth-child(5n+1){
+      height: 15px;
+    }
+    /* 表针定位到中心点 */
+    .hour,.minute,.second{  /*组合选择器*/
+      position: absolute;  /*相对于表盘定位*/
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-100%);  /*使表针尾部位于中心并上指*/
+      transform-origin: center bottom; /*绕底部中心点旋转*/
+    }
+    .hour{
+      width: 6px;
+      height: 60px;
+      background-color: red;
+    }
+    .minute{
+      width: 4px;
+      height: 80px;
+      background-color: blue;
+    }
+    .second{
+      width: 2px;
+      height: 100px;
+      background-color: green;
+    }
+    /* 圆盘中心小圆点 */
+    .dort{
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;  /*相对于表盘定位*/
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);  /*之前是左上角那个点位于中心 矫正 整体位于中心*/
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="clock">
+      <ul class="kd">
+
+      </ul>
+      <div class="dort"></div>   <!--中心小圆点-->
+      <div class="bz">
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var kd = document.getElementsByClassName("kd")[0];
+    var hour = document.getElementsByClassName("hour")[0];
+    var minute = document.getElementsByClassName("minute")[0];
+    var second = document.getElementsByClassName("second")[0];
+    var aLi = "";
+    
+    for(var i=0;i<60;i++){
+      //添加标签的循环 旋转间隔6度 默认相当于正中心
+      aLi += "<li style='transform:rotate("+i*6+"deg)'></li>"
+    }
+    kd.innerHTML = aLi; //转换为li标签
+
+    setInterval(function(){
+      // 定时函数 每隔1s刷新
+      var timer = new Date();
+      var nowHour = timer.getHours();  //获取当前小时
+      var nowMinute = timer.getMinutes();
+      var nowSecond = timer.getSeconds();
+      second.style.transform = " translate(-50%,-100%) rotate("+nowSecond*6+"deg)";
+      minute.style.transform = " translate(-50%,-100%) rotate("+nowMinute*6+"deg)";
+      hour.style.transform = " translate(-50%,-100%) rotate("+nowHour*30+"deg)";
+    },1000)
+
+  </script>
+</body>
+</html>

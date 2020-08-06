@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin:0;
+      /* height: 100vh;
+      width: 100vw;  视口高度和宽度 */
+      perspective: 1000px;  /*指定观察者与「z=0」平面的距离，为元素及其内容应用透视变换。不允许负值*/
+      /* perspective-origin: 0 0; 用长度值指定透视点坐标值。可以为负值。*/
+    }
+    .box{
+      width: 200px;
+      height: 200px;
+      border:2px dashed black;
+      margin:100px auto;
+      transform-style: preserve-3d;  
+      /*flat：指定子元素位于此元素所在平面内
+        preserve-3d：指定子元素定位在三维空间内*/
+    }
+    .div1{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      transition: all 1s ease; /*过渡效果*/
+      transform-style: preserve-3d;
+      /* backface-visibility: hidden; 
+      visible：指定元素背面可见，允许显示正面的镜像。
+      hidden：指定元素背面不可见*/
+    }
+    .div2{
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      transition: all 1s ease;
+      transform: translateZ(1px);  /*Z轴的位移，值越大离观察者越近*/
+    }
+    .box:hover .div1{
+      transform: rotateY(180deg); /*绕y轴旋转*/
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+  </div>
+</body>
+</html>
