@@ -7,11 +7,11 @@
 </head>
 <body>
   <script>
-    var timer = new Date();
-    timer.setDate(timer.getDate()+1);
-    var timerStr = timer.toUTCString();
+    var timer = new Date();  //获取当前时间
+    timer.setDate(timer.getDate()+1); //加1天
+    var timerStr = timer.toUTCString(); //时间对象转换字符串  toUTCString根据世界时间，将date对象转换字符串
     
-    document.cookie = "username=testa;expires="+timerStr;
+    document.cookie = "username=testa;expires="+timerStr; //expires过期时间
     document.cookie = "psw=1234;expires="+timerStr;
     console.log(document.cookie);
 

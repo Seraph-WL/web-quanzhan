@@ -16,16 +16,18 @@
     var oCan = document.getElementById("can");
     var canContext = oCan.getContext("2d");  //获取上下文  创建 context 对象
 
+    // 鼠标按下去的时候
     oCan.onmousedown = function(e){
-      canContext.strokeStyle = "white";
-      canContext.beginPath();
-      canContext.moveTo(e.clientX,e.clientY);
-      oCan.onmousemove = function(event){
-        canContext.lineTo(event.clientX,event.clientY);
-        canContext.stroke();
+      canContext.strokeStyle = "white"; //线的颜色
+      canContext.beginPath();  //在哪落笔 准备开始
+      canContext.moveTo(e.clientX,e.clientY); //往哪画 跟随鼠标
+      oCan.onmousemove = function(event){  //鼠标移动
+        canContext.lineTo(event.clientX,event.clientY);  //画到哪
+        canContext.stroke();  //开始画
       }
     }
-    document.onmouseup = function(){
+    // 鼠标键抬起来的时候
+    document.onmouseup = function(){ //整个文档内弹起置空，避免移出画布失效
       oCan.onmousemove = null;
     }
   </script>
