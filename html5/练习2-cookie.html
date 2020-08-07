@@ -8,19 +8,20 @@
 <body>
   <script>
     function setCookies(key,val,count){
-      var timer = new Date();
-      timer.setDate(timer.getDate()+count);
-      document.cookie = key+"="+val+";expires="+timer.toUTCString();
+      var timer = new Date(); //获取当前时间
+      timer.setDate(timer.getDate()+count);  //加count天
+      document.cookie = key+"="+val+";expires="+timer.toUTCString();  //expires过期时间
+      //时间对象转换字符串  toUTCString根据世界时间，将date对象转换字符串
     }
 
     function getCookies(key){
       var thisCookies = document.cookie;
-      var cookiesArr = thisCookies.split(";");
+      var cookiesArr = thisCookies.split(";");  //split 字符串转换成数组 通过分号截取字符串
       
       for(var i=0;i<cookiesArr.length;i++){
-        var thisKey = cookiesArr[i].split("=")[0].trim();
+        var thisKey = cookiesArr[i].split("=")[0].trim();  //获取key通过split  trim()去除当前字符串前后的空格
         if(key == thisKey){
-          return cookiesArr[i].split("=")[1]
+          return cookiesArr[i].split("=")[1];  // 返回value
         }        
       }
     }
@@ -34,7 +35,8 @@
     setCookies("username","xiaoming",1);
     setCookies("psw","123456",1);
     setCookies("test","aaa",1);
-    // removeCookies("psw")
+    getCookies("psw");
+    // removeCookies("test")
     console.log(getCookies("psw"));
     
   </script>

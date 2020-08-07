@@ -9,16 +9,16 @@
       width: 300px;
       height: 50px;
       background-color: gray;
-      display: flex;
+      display: flex; /*弹性布局 平分父元素 水平排列*/
       margin:100px auto;
     }
     .box div{
-      flex-grow: 1;
+      flex-grow: 1; /*等比例分配*/
       height: 50px;
-      text-align: center;
-      line-height: 50px;
+      text-align: center;  /*文字水平居中*/
+      line-height: 50px;   /*垂直居中*/
       color: white;
-      cursor: pointer;
+      cursor: pointer;  /*小手*/
     }
     .active{
       background-color: black;
@@ -27,8 +27,9 @@
 </head>
 <body>
   <div class="box">
+    <!-- data-* 属性用于存储页面或应用程序的私有自定义数据。 标签上存储状态值 -->
     <div data-title="one" class="btn active">one</div>
-    <div data-title="tow" class="btn">two</div>
+    <div data-title="two" class="btn">two</div>
     <div data-title="three" class="btn">three</div>
   </div>
   <script>
@@ -39,13 +40,13 @@
         for(var j = 0;j<aBtn.length;j++){
           aBtn[j].classList.remove("active");
         }
-        this.classList.add("active");
-        location.hash = this.dataset.title
+        this.classList.add("active"); //当前元素添加active
+        location.hash = this.dataset.title; //获取hash值 data-title的值
       }
     }
 
-    window.onhashchange = function(){
-      var thisHash = location.hash.substr(1);
+    window.onhashchange = function(){  //onhashchange 事件在当前 URL 的锚部分(以 '#' 号为开始) 发生改变时触发
+      var thisHash = location.hash.substr(1); //截取#后面的字符串值
       
       for(var i =0;i<aBtn.length;i++){
         if(aBtn[i].dataset.title == thisHash){

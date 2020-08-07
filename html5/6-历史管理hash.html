@@ -6,26 +6,28 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- 前进后退地址会发生改变 -->
   <h1 id="num"></h1>
   <button id="btn">change</button>
   <script>
-    var oBtn = document.querySelector("#btn");
+    var oBtn = document.querySelector("#btn");  //获取元素
     var oNum = document.querySelector("#num");
     var hashObj = {};
 
-    oBtn.onclick = function(){
+    oBtn.onclick = function(){  //绑定事件
       var arr = [];
       for(var i=0;i<5;i++){
-        arr.push(Math.floor(Math.random()*10));
+        arr.push(Math.floor(Math.random()*10));  //生成5个随机数字  push添加 0~9
       }
-      oNum.innerText = arr;
-      var nowRan = Math.random()
-      location.hash = nowRan;
-      hashObj[nowRan] = arr;
+      oNum.innerText = arr;  //文本显示  innerText可获取或设置指定元素标签内的文本值，从该元素标签的起始位置到终止位置的全部文本内容(不包含html标签)
+      var nowRan = Math.random();
+      location.hash = nowRan;  //hash 属性是一个可读可写的字符串，该字符串是 URL 的锚部分（从 # 号开始的部分）。
+      hashObj[nowRan] = arr;  //对象引用变量用下标  使生成的随机数与hash值相关联
     }
-    window.onhashchange = function(){
+    window.onhashchange = function(){  //onhashchange 事件在当前 URL 的锚部分(以 '#' 号为开始) 发生改变时触发 
       var thisHash = location.hash;
-      console.log(hashObj[thisHash.substr(1)]);
+      console.log(hashObj[thisHash.substr(1)]);  //thisHash.substr(1)截取去掉#的hash值  
+      // hashObj[thisHash.substr(1)]获取对应hash值生成的随机数
     }
   </script>
 </body>

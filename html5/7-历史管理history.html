@@ -6,6 +6,7 @@
   <title>Document</title>
 </head>
 <body>
+  <!-- 前进后退地址不会发生改变 -->
   <h1 id="num"></h1>
   <button id="btn">change</button>
   <script>
@@ -18,13 +19,17 @@
       for(var i=0;i<5;i++){
         arr.push(Math.floor(Math.random()*10));
       }
-      oNum.innerHTML = arr;
+      oNum.innerHTML = arr;  //innerHTML 属性设置或返回表格行的开始和结束标签之间的 HTML。
       var nowRan = Math.random();
-      history.pushState(nowRan,"")
+      history.pushState(nowRan,"");  //有前进后退的按钮了
+      // history.pushState(state, title, url)
+      // 1. state：与要跳转到的URL对应的状态信息
+      // 2. title: 标题 写了没用不写不行，传空字符串就行
+      // 3. url: 要跳转到的URL地址，不能跨域
       histroyObj[nowRan] = arr;
     }
 
-    window.onpopstate = function(e){
+    window.onpopstate = function(e){  //onpopstate 监听state的函数，相当于函数onhashchange
       console.log(histroyObj[e.state]);
     }
   </script>
