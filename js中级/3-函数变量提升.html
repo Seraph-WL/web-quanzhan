@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 变量提升
+    // console.log(a);  //undefined
+    // var a = 10;
+    // //等同于
+    // var a;
+    // console.log(a);
+    // a = 10;
+    
+    // // console.log(a); //报错
+    // function foo(){
+    //   var a
+    //   console.log(a);  //undefined
+    //   a = 10;
+    // }
+    // foo();
+
+    // console.log(a);  //undefined 没定义
+    // var a = function(){
+    //   console.log(a);
+    // }
+    // console.log(a);  //输出一个函数体
+    // var a = 10;
+    // console.log(a);  //10
+    // a();  //报错 不是函数
+
+
+    // 函数允许先调用后定义 函数提升
+    // foo();
+    // function foo(){
+    //   console.log("foo");
+    // }
+
+
+
+    // console.log(foo); //输出函数体 函数提升
+    // function foo(){
+    //   console.log("foo");
+    // }
+    // var foo = "123";
+    ////等同于
+    var foo; 
+    function foo(){
+      console.log("foo");
+    } 
+    console.log(foo);
+    foo = "123";
+  </script>
+</body>
+</html>

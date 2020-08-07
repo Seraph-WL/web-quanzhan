@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script>
+    var aLi = document.querySelectorAll("li");
+    for(var i = 0;i<aLi.length;i++){
+      (function(index){
+        aLi[index].onclick = function(){
+          console.log(index);
+        }
+      })(i)  //内部函数function访问外部函数局部变量i（后面括号的i） 变量一直保存没被释放
+    }
+
+
+    // var a = 10;
+    // function foo(){
+    //   var a;
+    //   console.log(a);
+    //   a = 20;
+    // }
+    // foo(); //undefined 未定义
+    // console.log(a);  //10
+
+
+    //作用域链  
+    // 当前作用内引用某一个变量的时候，优先在当前作用域中查找，
+    // 如果当前作用域中没有此变量那么他就会去上一个作用域的找，如果所有外层作用域都没有此变量那么未定义
+    // var a = 10;  
+    // function foo(){
+    //   var a = 20;
+    //   console.log(a); //20
+    //   function foo2(){
+    //     console.log(a);  //20
+    //   }
+    //   foo2();
+    // }
+    // foo();
+
+
+    // function foo(){
+    //   var a = "hello world";
+    //   function foo2(){
+    //     return a;
+    //   }
+    //   return foo2 
+    // }
+    // var b = foo();
+    // console.log(b());  //b的话是foo2函数  b()是hello world
+
+
+
+    //垃圾回收机制 
+    // function foo(){
+    //   var a = 10;
+    //   console.log(a);
+    // } //函数遍历完变量如果不被引用就没意义了  被释放
+    // foo();
+
+    //闭包 定义在一个函数内部的函数
+    // 闭包就是能够读取其他函数内部变量的函数  （函数的嵌套 内部函数变量调用外部的且没被释放）
+    //     function f1(){
+    // 　　　　var n=999;
+    // 　　　　nAdd=function(){n+=1}
+    // 　　　　function f2(){
+    //         console.log(n);
+    // 　　　　}
+    // 　　　　return f2;
+    // 　　}
+    // 　　var result=f1();
+    // 　　result();  //得到999
+
+    // 　　nAdd(); //n-1000 没结果
+    // 　　result(); //得到1000
+
+
+    // function foo(){
+    //   var a = 10;
+    //   function foo2(){
+    //     return a
+    //   }
+    //   return foo2
+    // }
+    // console.log(foo()()); //一个括号得到foo2函数体 两个得到10
+
+
+    // var a = 10;
+    // function foo(){
+    //   console.log(this.a); //得到10
+    // }
+    // foo()
+
+    // var obj = {
+    //   username:"xiaoming",
+    //   shwoName:function(){
+    //     var _this = this;
+    //     console.log(this.username); //this指向obj对象
+    //     function foo(){
+    //       console.log(_this.username); //this指向window
+    //     }
+    //     foo();
+    //   }
+    // }
+    // obj.shwoName();
+
+    // name是关键字 尽量不要当做变量
+    // var name1 = "The Window";
+    // var object = {
+    //   name1: "My Object",
+    //   getNameFunc: function () {
+    //     return function () {
+    //       return this.name1;
+    //     };
+    //   }
+    // };
+    // console.log(object.getNameFunc()());  //输出The Window
+
+
+//       var name = "The Window";
+//       var object = {
+// 　　　　name : "My Object",
+// 　　　　getNameFunc : function(){
+// 　　　　　　var that = this;
+// 　　　　　　return function(){
+// 　　　　　　　　return that.name;
+// 　　　　　　};
+// 　　　　}
+// 　　};
+// 　　console.log(object.getNameFunc()()); //输出My Object
+
+    //立即执行函数
+    // (function(){
+    //   console.log("123");
+    // })();
+    // 立即执行函数由下方演变过来的
+    // var foo = function(){
+    //   console.log("123");
+    // }
+    // foo();
+
+
+
+
+
+  </script>
+</body>
+
+</html>

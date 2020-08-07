@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function foo(){
+
+    // }
+    // foo.fellow() //hello world
+
+
+    // var n = new Number();
+    // n.push("1"); //报错  number没有内置方法push（）
+
+    // var arr = new Array(); //arr实例化出的对象  Array 构造函数
+    // console.log(arr.__proto__); //实例化对象查看原型  __proto__查看数组下面的方法
+    // console.log(Array.prototype); //构造函数查看原型  和上一个指向同一个东西 prototype查看数组下面的方法
+    
+    
+    
+
+    // var arr = new Array()
+    // arr.push("1");  //push是数组内置的方法
+    // console.log(arr);
+    // console.log(arr.length);
+    
+
+    //原型链
+    // 自定义方法构造函数和原型都有时 优先调用构造函数里的自定义方法
+    function Foo(i){
+      this.fellow = i; //自定义属性
+      this.showFellow = function(){  //自定义方法 不推荐在构造函数里写自定义方法
+        console.log("hello");
+      }
+    }
+    Foo.prototype.showFellow = function(){
+      console.log(this.fellow); //尽量在原型里写自定义方法
+      
+    }
+    // var foo = new Foo(43);
+    // console.log(foo.fellow);
+    // foo.showFellow();
+    
+    // console.log(Foo.prototype);
+
+    Array.prototype.fellow = function(){
+      console.log(this);
+    } 
+    var arr = ["hello"];
+    var a = new Array();
+    arr.fellow()
+
+    function foo(){
+
+    }
+
+    
+  </script>
+</body>
+</html>

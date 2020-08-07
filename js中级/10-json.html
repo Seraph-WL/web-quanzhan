@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var person = {
+    //   "name":"小明",
+    //   "age":"20",
+    //   "school":"林大"
+    // } //json 字符串的形式
+
+
+    var person = {
+      name:"小明",
+      age:20,
+      school:"林大"
+    }
+    let jsonStr = JSON.stringify(person);  //转换成json类型字符串
+    console.log(jsonStr);
+    let jsonObj = JSON.parse(jsonStr);  //转换成对象
+    console.log(jsonObj);
+    
+
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // XMLHttpRequest 用于在后台与服务器交换数据。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新
+    // 第一步创建 XMLHttpRequest
+    var xmlhttp;
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp = new XMLHttpRequest();
+    }
+    else {// code for IE6, IE5
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      // 所有现代浏览器均支持 XMLHttpRequest 对象（IE5 和 IE6 使用 ActiveXObject）
+    }
+    //第二步 发送请求
+    xmlhttp.open("GET", "https://api.myjson.com/bins/x6im0", true); //get请求 open() 方法的 async 参数必须设置为 true
+    xmlhttp.send();
+    //第三步 接收返回值
+    // 当使用 async=true 时，请规定在响应处于 onreadystatechange 事件中的就绪状态时执行的函数：
+    xmlhttp.onreadystatechange = function () {
+      // 当 readyState 等于 4 且状态为 200 时，表示响应已就绪
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var thisRes = JSON.parse(xmlhttp.responseText); //转换成对象
+         console.log(thisRes.name);
+      }
+    }
+  </script>
+</body>
+
+</html>

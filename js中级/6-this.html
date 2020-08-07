@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">btn</button>
+  <script>
+    var btn = document.querySelector("#btn");
+    // 事件处理函数里this默认指向事件处理源  内部函数指向window
+    btn.onclick = function(){
+      console.log(this); //输出<button id="btn">btn</button> this指向btn
+      function foo(){
+        console.log(this); //Window
+      }
+      foo();
+    }
+
+    // 普通函数指向window
+    function foo(){
+      console.log(this);  //Window
+    }
+    foo()
+
+    // 对象里this默认指向对象  内部函数指向window
+    var obj = {
+      username:"xiaoming",
+      showName:function(){
+        console.log(this);  //当前对象
+        function foo(){
+          console.log(this);  //Window
+        }
+        foo()
+      }
+    }
+    obj.showName();
+
+
+    var obj = {
+      a:"hello"
+    }
+    var a = 10;
+    function foo(n,m){
+      console.log(this.a + n + m);
+    }
+    // foo()
+
+    // foo.call(obj," world"," Seraph-WL"); //第一个参数是你要指向的对象 后面可是多个参数 可修改this指向
+    // foo.apply(obj,[" world"," Seraph-WL"]); //第一个参数是你要指向的对象  后面只能有1个参数 可修改this指向
+    var foo2 = foo.bind(obj," world"," Seraph-WL"); //第一个参数是你要指向的对象  后面可是多个参数 可修改this指向 这个得用变量接收例如foo2
+    foo2(); //执行foo2
+
+  </script>
+</body>
+</html>
