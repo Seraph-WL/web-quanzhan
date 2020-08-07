@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <input type="text">
+  <script>
+    $("input").keyup(function(){
+      console.log(this.value); //this是原型对象没法使用jQuery的方法
+      console.log($(this).val());  //这样才能使用
+      
+    })
+  </script>
+</body>
+</html>

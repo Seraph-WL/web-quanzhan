@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+  <style>
+    
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>34567</li>
+    <li class="a">4</li>
+    <li>5</li>
+    <li>6<span>hello</span></li>
+  </ul>
+  <script>
+    // $("li:eq(1)").css({color:"red"}); //第二个变红色
+    // $("li:gt(3)").css({color:"red"}); //下标大于3的变为红色
+    // $("li:lt(3)").css({color:"red"}); //下标小于3的变为红色
+    // $("li:odd").css({color:"red"}); //下标从0开始  下标为奇数的变红色
+    // $("li:even").css({color:"red"}); //下标从0开始  下标为偶数的变红色
+    // $("li:eq(1)").css({color:"red"});
+    // $("li:not(.a)").css({color:"red"}); //除了这个都是红色
+
+    $("li:contains(h)").css({color:"red"});  //包含h的变红色
+    
+</script>
+</body>
+
+</html>
