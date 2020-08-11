@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -43,8 +42,8 @@
     })
 
     $("#btn").click(function(){
-      // $(".div3").trigger("click")
-      $(".div3").triggerHandler("click");
+      // $(".div3").trigger("click") //trigger(""):触发另一个事件 会发生冒泡
+      $(".div3").triggerHandler("click"); //triggerHandler("")与trigger("")区别是不会冒泡
     })
   </script>
 </body>

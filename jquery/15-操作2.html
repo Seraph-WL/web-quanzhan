@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -19,16 +18,16 @@
   <span class="test">world</span>
   <div class="div1"></div>
   <script>
-  //  $(".box").append("<span class='test'>world</span>"); 
-  // $("<span class='test'>world</span>").appendTo(".box");
+  //  $(".box").append("<span class='test'>world</span>"); //append:在匹配元素里的内容外包一层结构
+  // $("<span class='test'>world</span>").appendTo(".box");  //将匹配的元素插入到目标元素的最后面
 
-  // $(".box").append($(".test"));
+  // $(".box").append($(".test"));  //将已有元素添加到hello后面
 
-  // $(".box").prepend("<span class='test'>world</span>")
-  // $("<span class='test'>world</span>").prependTo(".box")
+  // $(".box").prepend("<span class='test'>world</span>")  //将参数内容插入到每个匹配元素的前面
+  // $("<span class='test'>world</span>").prependTo(".box")  //将所有元素插入到目标前面
 
-  $(".div1").text("fellow41");
-  $(".div1").html("<h1>hello</h1>");
+  $(".div1").text("fellow41"); //与innerText一样
+  $(".div1").html("<h1>hello</h1>");  //与innerHtml一样
 
 
   </script>

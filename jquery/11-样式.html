@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -17,13 +16,13 @@
   <button id="btn">change</button>
   <script>
     // $(".box").attr("class","box active");
-    // $(".box").addClass("active");
+    // $(".box").addClass("active"); //原有基础上添加
     // $(".box").removeClass("active");
-    // console.log($(".box").hasClass("active1"));
+    // console.log($(".box").hasClass("active1")); //返回true有这个值，返回false没有这个值
 
 
     $("#btn").click(function(){
-      $(".box").toggleClass("active");
+      $(".box").toggleClass("active"); //单击一下增加active，第二下又移除 开关的效果
     })
 
   </script>

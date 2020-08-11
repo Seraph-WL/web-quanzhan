@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
 </head>
@@ -28,16 +27,16 @@
   <script>
 
     $("#btn").click(function () {
-      // $(".div1").nextAll("div").css({color:"red"})
-      // $(".div1").nextAll("div").addBack().css({color:"red"});
-      // $(".box").children("div").css({border:"1px solid black"})
+      // $(".div1").nextAll("div").css({color:"red"}) //nextAll（div）后面所有的div
+      // $(".div1").nextAll("div").addBack().css({color:"red"}); //addBack()：当前元素的前一个元素
+      // $(".box").children("div").css({border:"1px solid black"}) //控制当前的亲子代元素div
 
-      // console.log($(".child1").closest(".box"));
-      // console.log($(".child1").parents("div"));
-      // console.log($(".child1").parent("div"));
-      // console.log($(".child1").parentsUntil(".parent1"));
+      // console.log($(".child1").closest(".box")); //从当前元素child1开始找 往上找
+      // console.log($(".child1").parents("div")); //返回所有的祖先元素 从父元素开始找
+      // console.log($(".child1").parent("div")); //从父元素开始找
+      // console.log($(".child1").parentsUntil(".parent1")); //从父元素开始找 不包含截止位置parent1
 
-      // $(".parent1").find(".child1").css({color:"red"});
+      // $(".parent1").find(".child1").css({color:"red"}); //由parent1发起找到其子代元素child1
 
     })
   </script>

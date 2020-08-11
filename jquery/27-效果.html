@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -29,41 +28,42 @@
   <div class="box"></div>
   <script>
     $("#hide").click(function(){
-      // $(".box").hide("fast");
+      // $(".box").hide("fast"); //快速隐藏 可无参数
       $(".box").hide(2000);
     })
     $("#show").click(function(){
-      $(".box").show(2000);
+      $(".box").show(2000); //显示
     })
     $("#toggle").click(function(){
-      $(".box").toggle(1000);
+      $(".box").toggle(1000); //类似开关 显示或隐藏
     })
+    // fadeIn与fadeOut成对出现
     $("#fadein").click(function(){
-      $(".box").fadeIn(1000);
+      $(".box").fadeIn(1000); //显示
     })
     $("#fadeout").click(function(){
-      $(".box").fadeOut(1000);
+      $(".box").fadeOut(1000); //隐藏 类似透明
     })
     $("#fadetoggle").click(function(){
-      $(".box").fadeToggle(1000);
+      $(".box").fadeToggle(1000); //类似开关 显示或隐藏
     })
     $("#fadeto").click(function(){
-      $(".box").fadeTo(500,0.3);
+      $(".box").fadeTo(500,0.3); //第一个参数时间，第二个参数透明度
     })
     $("#slideUp").click(function(){
-      $(".box").slideUp(1000);
+      $(".box").slideUp(1000); //向上隐藏 类似卷帘门
     })
     $("#slideDown").click(function(){
-      $(".box").slideDown(1000);
+      $(".box").slideDown(1000); //向下隐藏 类似卷帘门
     })
     $("#slideToggle").click(function(){
-      $(".box").slideToggle(1000);
+      $(".box").slideToggle(1000); //向上下隐藏 类似卷帘门 开关
     })
-    $("#animate").click(function(){
+    $("#animate").click(function(){ //自定义
       $(".box").animate({
         width:"+=100",
         height:100,
-        opacity:0.3
+        opacity:0.3 //透明度
       });
     })
   </script>

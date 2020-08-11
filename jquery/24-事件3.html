@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <div class="box">
+    <input type="text" id="inp">
+  </div>
+  <!-- <button id="btn">按钮</button> -->
+  <script>
+    // 键盘事件
+    // 当用户在一个元素上释放按键的时候，keyup事件就会被附加到这个元素。
+    // 它可以绑定到任何元素，但该事件只是发送到获取焦点的元素上 表单元素最合适
+    $("#inp").keyup(function(e){
+      console.log(e);
+      if(e.which == 13){ //通过keycode和which可以判断按下键盘哪个键 13是回车
+        console.log("按下了回车");
+        
+      }
+    })
+
+    // 鼠标事件
+    // $(".box").focusout(function(){ //里面的表单元素（冒泡）触发事件 与blur事件相比它支持冒泡
+    //   console.log("out")
+    // })
+    // $(".box").focusin(function(){
+    //   console.log("in")
+    // })
+    // focusin 事件会在元素（或者其内部的任何元素）获得焦点时触发。
+    // 这跟 focus 事件的显著区别在于，它可以在父元素上检测子元素获得焦点的情况(换而言之，它支持事件冒泡)。
+
+    // $("#btn").click(function(){
+    //   $("#inp").focus(); //focus():表单元素获取焦点 选中文本框
+    // })
+    // $("#inp").focus(function(){ //focus绑定事件
+    //   console.log('focus');
+      
+    // })
+    // $("#inp").blur(function(){ //blur:失去焦点
+    //   console.log("blur");
+      
+    // })
+  </script>
+</body>
+</html>

@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -15,14 +14,15 @@
   <div class="box2"></div>
   <div class="box3"></div>
   <script>
-   $.fn.extend({
+   $.fn.extend({ //一个对象的内容合并到jQuery的原型，以提供新的jQuery实例方法。
+  //  jQuery.fn.extend()方法继承了jQuery原型($.fn)对象，以提供jQuery原型新的方法，可以链式调用jQuery()函数。
     fellow:function(obj){
       var person = {
         name:"小明",
         age:20,
         school:"黑大"
       }
-      $.extend(person,obj);
+      $.extend(person,obj); //将对象合并
       var btn = $("<button class='btn'>按钮</button>")
       $(this).html(btn)
       btn.click(function(){

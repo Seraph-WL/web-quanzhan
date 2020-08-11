@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -33,10 +32,10 @@
   </div>
   <script>
   //  $("li:first-child").css({color:"red"});
-  //  $(".box div:first-child").css({color:"red"});
-  //  $(".box div:first-of-type").css({color:"red"});
-  // $("li:nth-last-child(1)").css({color:"red"});
-  $(".box div:nth-of-type(2)").css({color:"red"});
+  //  $(".box div:first-child").css({color:"red"}); //第一个div不变色，上面有p标签是第一个
+  //  $(".box div:first-of-type").css({color:"red"}); //第一个div变色
+  // $("li:nth-last-child(1)").css({color:"red"}); //从后往前数第一个
+  $(".box div:nth-of-type(2)").css({color:"red"});  //子代选择器 第二个div变色
 
   </script>
 </body>

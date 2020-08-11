@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
 </head>
@@ -17,23 +16,23 @@
   <button id="btn">change</button>
   <script>
     $("#btn").click(function(){
-      // console.log($("div").eq(0));
+      // console.log($("div").eq(0)); //获取第一个div
 
-      // $("div").filter(":contains(2)").css({color:"red"});
+      // $("div").filter(":contains(2)").css({color:"red"}); //包含2变红色
 
-      // $("div").first().css({color:"red"});
+      // $("div").first().css({color:"red"}); //第一个
 
-      // $("div").has("span").css({color:"red"});
+      // $("div").has("span").css({color:"red"}); //包含span变红色
 
-      // $("div").not(".div2").css({color:"red"});
+      // $("div").not(".div2").css({color:"red"}); //除了div2都变红色
 
       // var i = 1;
-      // $("div").map(function(){
-      //   $(this).text("hello"+i);
+      // $("div").map(function(){ map：通过一个函数匹配当前集合中的每个元素,产生一个包含新的jQuery对象。有返回值
+      //   $(this).text("hello"+i); //所有文字改变 map相当于循环
       //   i++
       // })
 
-      $("div").slice(1,3).css({color:"red"});
+      $("div").slice(1,3).css({color:"red"}); //2,3变红色 不包含结束位置（下标从0开始）
 
     })
   </script>

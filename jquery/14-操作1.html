@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -15,9 +14,9 @@
   <p>title</p>
   <div class="div1">world</div>
   <script>
-    // $(".div1").wrap("<div class='box'>");
-    // $(".div1").wrapAll("<div class='box'>");
-    $(".div1").wrapInner("<div class='box'>");
+    // $(".div1").wrap("<div class='box'>");  //在集合中匹配的每个元素周围包裹一个HTML结构。 外层添加元素
+    // $(".div1").wrapAll("<div class='box'>");  //在集合中所有匹配元素的外面包裹一个HTML结构。
+    $(".div1").wrapInner("<div class='box'>");  //在匹配元素里的内容外包一层结构
 
 
   </script>

@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -77,8 +76,8 @@
   </div>
   <script>
     $(".nav-ul li").click(function(){
-      // $(this).addClass("active").siblings().removeClass("active");
-      // $(".content ul").eq($(this).index()).addClass("active").siblings().removeClass("active");
+      // $(this).addClass("active").siblings("li").removeClass("active"); //当前点击的元素加active，兄弟元素移除active
+      // $(".content ul").eq($(this).index()).addClass("active").siblings().removeClass("active"); //$(this).index()索引，eq()第几个
       $(this).add($(".content ul").eq($(this).index())).addClass("active").siblings().removeClass("active");
     })
   </script>

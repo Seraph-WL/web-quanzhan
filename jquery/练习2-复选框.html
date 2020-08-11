@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
 </head>
@@ -32,7 +31,7 @@
 
     // $("#reverse").click(function(){
     //   for(var i=0;i<$(":checkbox").length;i++){
-    //     if($(":checkbox:eq("+i+")").prop("checked")){
+    //     if($(":checkbox:eq("+i+")").prop("checked")){  //eq:在匹配的集合中选择索引值为index的元素。
     //       $(":checkbox:eq("+i+")").prop("checked",false)
     //     }else{
     //       $(":checkbox:eq("+i+")").prop("checked",true)
@@ -42,7 +41,7 @@
 
     $("#reverse").click(function(){
       for(var i=0;i<$(":checkbox").length;i++){
-        var thisChec = $(":checkbox").get(i)
+        var thisChec = $(":checkbox").get(i)  //获取所有checkbox，get第几个并取出原生属性
         thisChec.checked = !thisChec.checked
       }
     })

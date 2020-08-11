@@ -3,7 +3,7 @@ $.fn.extend({
     var defaultObj = {
       type:"默认"
     }
-    $.extend(defaultObj,obj);
+    $.extend(defaultObj,obj); //合并
     var modalBtn = $('<button class="btn">'+defaultObj.type+'</button>');
     var modalHtml =$( '<div class="mosk">'+
                       '<div class="box">'+

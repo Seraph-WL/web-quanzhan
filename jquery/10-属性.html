@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <div id="box">hello</div>
+  <input type="checkbox" id="chec">
+  <script>
+    // $("#box").attr("Hello","World"); //添加属性Hello 值为World
+    // $("#box").attr("class","active");
+    // console.log($("#box").attr("class")); //获取
+
+    // $(":checkbox").attr("checked","checked")
+    // $(":checkbox").removeAttr("checked")  //移除属性
+
+    // $(":checkbox").prop("checked",true);  //添加属性但不显示 true为选中
+    // $(":checkbox").prop("checked",false);  //添加属性但不显示 false为不选中
+    $("#chec").click(function(){
+      // console.log($(this).attr("checked"));  //点击输出undefined
+      console.log($(":checkbox").prop("checked")); //点击输出true或false
+      
+      
+    })
+
+    
+
+  </script>
+</body>
+</html>

@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -22,6 +21,7 @@
       <tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
     </thead>
     <tbody>
+      <!-- colSpan 属性可设置或返回表元横跨的列数。列合并 -->
       <tr class="parent" id="row_01"><td colspan="3">前台设计组</td></tr>
       <tr class="child_row_01"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
       <tr class="child_row_01"><td>李四</td><td>女</td><td>浙江杭州</td></tr>
@@ -44,10 +44,10 @@
       // }
 
       // $(this).toggleClass("selected").nextUntil(".parent").toggleClass("is-show");
-      
-      var thisId = $(this).attr("id");
-      $("[class*="+thisId+"]").toggleClass("is-show");
-      $(this).toggleClass("selected");
+      // toggleClass类似开关 nextUntil(".parent")直到下一个.parent为止
+      var thisId = $(this).attr("id"); //attr获取属性 可见的
+      $("[class*="+thisId+"]").toggleClass("is-show"); //class包含row_01等的添加is-show
+      $(this).toggleClass("selected"); //toggleClass():类似于开关
       
     })
     

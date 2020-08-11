@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -32,13 +31,13 @@
     <div class="div1"></div>
   </div>
   <script>
-    // console.log($(".div1").offset());
+    // console.log($(".div1").offset()); //当前元素的位置top=110（border+height） left=670
     // $(".div1").offset({top:200})
 
-    // console.log($(".div1").offsetParent());
+    // console.log($(".div1").offsetParent()); //返回最近的定位的祖先元素
     
-    console.log($(".div1").position());
-    $(".div1").position()
+    console.log($(".div1").position()); //返回定位的相对这个元素的位置
+    $(".div1").position() //不支持参数
     
     
   </script>

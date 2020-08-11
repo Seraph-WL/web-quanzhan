@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
 </head>
@@ -23,13 +22,13 @@
   <script>
 
     $("#btn").click(function () {
-      // $(".div1").next("div").css({color:"red"});
-      // $(".div1").nextAll("div").css({color:"red"});
-      // $(".div1").nextUntil(".div4").css({color:"red"});
+      // $(".div1").next("div").css({color:"red"}); //后面一个元素
+      // $(".div1").nextAll("div").css({color:"red"}); //后面所有元素
+      // $(".div1").nextUntil(".div4").css({color:"red"}); //中间的元素
 
-      // $(".div3").prev("div").css({color:"red"});
+      // $(".div3").prev("div").css({color:"red"}); //前面一个元素
 
-      $(".div2").siblings("div").css({color:"red"});
+      $(".div2").siblings("div").css({color:"red"}); //兄弟元素，不包括自己
 
 
     })

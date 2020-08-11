@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -12,19 +11,9 @@
 </head>
 <body>
   <script>
-    var obj = {
-      name:"xiaoming"
-    }
-    var obj2 = {
-      school:"黑大"
-    }
-    var obj3 = {
-      age:20
-    }
-
-    $.extend(obj,obj2,obj3);
-    console.log(obj);
-    
+    $.get("https://api.myjson.com/bins/l8pz0",function(res){
+      console.log(res);
+    })
   </script>
 </body>
 </html>

@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -55,6 +54,7 @@
     </thead>
     <tbody>
       <tr class="even">
+        <!-- type="radio"单选框 -->
         <td><input type="radio" name="choice" value=""></td>
         <td>张山</td>
         <td>男</td>
@@ -94,10 +94,11 @@
   </table>
   <script>
     $("tbody tr").click(function(){
-      // $(this).addClass("selected").siblings().removeClass("selected");
-      // $(this).find(":radio").prop("checked",true);
-      
+      // $(this).addClass("selected").siblings().removeClass("selected"); //.siblings().removeClass("selected")所有兄弟元素移除selected
+      // $(this).find(":radio").prop("checked",true); //find():通过一个选择器，jQuery对象，或元素过滤，得到当前匹配的元素集合中每个元素的后代
+      // prop("checked",true) 获取匹配的元素集中第一个元素的属性（property）值 在单选框中不用false在取消掉
       $(this).addClass("selected").siblings().removeClass("selected").end().find(":radio").prop("checked",true);
+      // end():结束当前这一层并返回上一层
     })
   </script>
 </body>

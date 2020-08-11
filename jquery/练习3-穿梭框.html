@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
     * { margin:0; padding:0; }
@@ -52,34 +51,34 @@
     </div>
   <script>
     $("#add_all").click(function(){
-      $("#select1 option").appendTo("#select2");
+      $("#select1 option").appendTo("#select2"); //前面的添加到后面
     })
     $("#remove_all").click(function(){
       $("#select2 option").appendTo("#select1");
     })
     $("#add").click(function(){
-      $("#select1 option:selected").appendTo("#select2");
+      $("#select1 option:selected").appendTo("#select2"); //:selected被选中的
     })
     $("#remove").click(function(){
       $("#select2 option:selected").appendTo("#select1");
     })
 
     //错误方法
-    // $("#select1 option").dblclick(function(){
+    // $("#select1 option").dblclick(function(){ //绑定的是选项1~选项7
     //   // console.log(this);
     //   $(this).appendTo("#select2");
     // })
-    // $("#select2 option").dblclick(function(){
+    // $("#select2 option").dblclick(function(){ //绑定的是选项8
     //   // console.log(this);
     //   $(this).appendTo("#select1");
     // })
 
-    $("#select1").on("dblclick","option",function(){
+    $("#select1").on("dblclick","option",function(){ //option触发时才行 没有给option绑定
       $(this).appendTo("#select2")
     })
     $("#select2").on("dblclick","option",function(){
-      // $(this).appendTo("#select1")
-      $("#select1").append(this)
+      // $(this).appendTo("#select1") //往后
+      $("#select1").append(this) //往前
     })
 
   </script>

@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style type="text/css">
@@ -57,14 +56,15 @@
   </table>
   <script>
     $(".editable").click(function(){
-      var thisText = $(this).text();
-      if($(this).children().length<1){
-        $(this).html("<input type='text' class='inp' value='"+thisText+"'/>").find(".inp").focus();
+      var thisText = $(this).text(); //保留原来文字
+      if($(this).children().length<1){ //$(this).children()判断里面是否有元素 没有为0
+        $(this).html("<input type='text' class='inp' value='"+thisText+"'/>").find(".inp").focus();  //变成文本框 focus():加焦点选中效果
       }
 
     })
 
-    $(".editable").focusout(function(){
+    // 有focus才有blur
+    $(".editable").focusout(function(){ //当前元素的内部blur事件
       var thisVal = $(this).find(":input").val();
       $(this).text(thisVal)
       
@@ -72,7 +72,7 @@
 
     $(".editable").on("keyup",function(e){
       if(e.which == 13){
-        $(this).trigger("focusout")
+        $(this).trigger("focusout") //触发focusout事件
       }
     })
   </script>

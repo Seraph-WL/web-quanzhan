@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script src="./js/jquery-3.4.1.js"></script>
   <style>
@@ -24,9 +23,9 @@
     <li>6</li>
   </ul>
   <script>
-    // $("li:empty").css({borderColor:"red"})
-    // $("li:has(span)").css({borderColor:"red"})
-    $("li:parent").css({borderColor:"red"})
+    // $("li:empty").css({borderColor:"red"})   //哪个元素没有内容可以单独控制一下，改变颜色
+    // $("li:has(span)").css({borderColor:"red"})  //包含span元素变红色
+    $("li:parent").css({borderColor:"red"})  //parent所有含有子元素或者文本的父级元素,这个正好和 :empty相反
 
   </script>
 </body>
