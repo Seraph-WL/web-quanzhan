@@ -32,6 +32,6 @@
   align-items: center; /*交叉轴居中*/
   justify-content: space-between; /*两端对齐*/
 }
-.close{
+.close{ 
   cursor: pointer;
 }
