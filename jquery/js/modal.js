@@ -24,4 +24,4 @@ $.fn.extend({
       $(modalHtml).hide();
     })                
   }
-})
+}) 
