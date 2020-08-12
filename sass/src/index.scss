@@ -1,0 +1,156 @@
+/*! main */
+@import "./main.scss"; // 导入文件
+$color:#ff6700;
+// $ 定义变量
+.box{
+  /*box style*/
+  color: $color;
+  // & yin yong fu xuan ze qi
+  &-header{
+    font-size: 30px;
+  }
+  &:hover{
+    color: black;
+  }
+  .div1{
+    font-size: 20px;
+    .child1{ //xuan ze qi qian tao
+      font-weight: bold;
+    }
+  }
+}
+.box2{
+  // border:1px solid $color;
+  border: {
+    left:{ //shu xing qian tao
+      color:$color;
+      width:1px;
+      style:"solid";
+    }
+  }
+
+}
+// @mixin hun he
+@mixin foo ($h:300px,$w:300px,$c:red){
+  width: $w;
+  height: $h;
+  background-color: $c;
+}
+.box3{
+  @include foo(300px,300px,yellow);
+}
+.box4{
+  @include foo($c:blue);
+  font-size: 30px;
+}
+.box5{
+  width: 200px;
+  height: 20px;
+  background-color: red;
+}
+.box6{
+  @extend .box5; //ji cheng zi xuan ze qi
+  font-size: 30px;
+}
+$w1:800px;
+$h1:200px;
+.box7{
+  // width: 6rem+7;
+  height: 13px-5px;
+  font-size: 2*3px;
+  // border-width: (6px/2);
+  // border-width: abs(3-10px); //abs jue dui zhi
+  width: percentage($h1/$w1); //bai fen bi
+  
+}
+$img:'xxx.jpg';
+.box8{
+
+  background-image: url("./img/" + $img);
+}
+$str1:"hello world!";
+.box8::after{
+  // content: to-upper-case($str1); //zhuan huan da xie
+  content:str-index($str1,"w"); //suo yin cong 1 start
+  width: str-length($str1); //zi fu chuan chang du
+}
+$color2:rgba(255,0,0,.5);
+.box9{
+  color: lighten($color2,40%); //geng qian
+  // color: darken($color2, 20%); //geng shen
+  // color: opacify($color2,0.3); //geng bu tou ming
+  // color: transparentize($color2,0.3); //geng tou ming
+}
+$list: 1px solid black;
+$list2: 1px solid;
+$list3: green;
+.box10{
+  // border:$list;
+  // border:append($list2, red); //lie biao hou mian zhui jia zhi
+  border:join($list2,$list3); //he bing lie biao
+  // font-weight: length($list); //lie biao chang du
+  flex-grow: index($list,solid); //fan hui suo yin
+  color: nth($list,3) //qu chu suo yin dui ying de zhi
+}
+$map:(color11:red,color12:blue,color13:yellow);
+.box11{
+  color: map-get($map, color12); //huo qu val
+  // z-index: map-keys($map); //fan hui suo you key
+  // z-index: map-values($map); //fan hui suo you value
+  // z-index: map-has-key($map,color11); //shi fou bao han key
+
+
+}
+$text:"hello";
+$text2:".box12";
+$text3:"color";
+// bian liang zhu shi ke yong
+/* this text : #{$text}*/
+#{$text2}{ //xuan ze qi ke yong
+  // color: $color
+  #{$text3}:$color //shu xing ming zhong yin yong
+}
+
+// @for $i from 1 through 10{ // bao han 10
+//   .div-#{$i}{
+//     width: #{$i}px;
+//   }
+// }
+
+// @for $i from 1 to 10{ //bu bao han 10
+//   .div-#{$i}{
+//     width: #{$i}px;
+
+//   }
+// }
+
+// $arr: a b c d e;
+
+// @each $var in $arr { //bian li lie biao
+//   .div-#{$var}{
+//     color: red;
+//   }
+// }
+$i:1;
+@while $i<12 {
+  .div-#{$i}{
+    width: 1px;
+  }
+  $i:$i+1
+}
+
+@function foo($n){
+  @if($n == 0){
+    @return red;
+  }@else if($n == 1){
+    @return blue;
+  }@else{
+    // @warn '警告11';
+    // @error 'error11';
+    @return yellow;
+  }
+}
+
+.box13{
+  color: foo(6);
+}
