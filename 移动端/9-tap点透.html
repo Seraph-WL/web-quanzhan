@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <style>
+    .div1{
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+    .div2{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+      top:0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+  <div class="div2"></div>
+  <script>
+    // 解决方法
+    $(".div2").on("touchend",function(e){
+      console.log("div2");
+      $(this).hide();
+      e.preventDefault();
+    })
+
+    // $(".div2").tap(function(){ //tap与click同时用时 触发tap有时也会触发click
+    //   console.log("div2");
+    //   $(this).hide();
+    // })
+    $(".div1").click(function(){ //有300ms延时效果
+      console.log("div1");
+    })
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    .div1{
+      width: 200px;
+      height: 400px;
+      background-color: blue;
+      position: absolute; /*定位 脱离文档流 所在空间释放 红框上去了*/
+    }
+    .div2{
+      height: 400px;
+      background-color: red;
+      margin-left: 200px;  /*左边空出200px 在蓝框下面那行*/
+      /* transform: translateY(-400px); */ /*向上移400px*/
+    }
+  </style>
+</head>
+<body>
+  <div class="div1">
+    left
+  </div>
+  <div class="div2">
+    right（定位和transform）
+  </div>
+</body>
+</html>

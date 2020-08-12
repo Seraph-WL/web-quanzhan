@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <style>
+    span{
+      display: none; /*隐藏*/
+    }
+    .active{
+      display: inline; /*行元素 DELETE显示在后面*/
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      list item 1 <span>DELETE</span>
+    </li>
+    <li>
+      list item 2 <span>DELETE</span>
+    </li>
+  </ul>
+  <script>
+    $("li").swipe(function(){ //绑定滑动事件
+      $(this).siblings().children("span").removeClass("active"); //siblings()兄弟元素
+      $(this).children("span").addClass("active");
+    })
+    $("span").tap(function(){
+      $(this).parent("li").remove();
+    })
+  </script>
+</body>
+</html>

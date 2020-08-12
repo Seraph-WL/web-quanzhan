@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+  <script>
+
+    // tap和click尽量不要混着用 会出问题
+    // $(".div1").text("hello");
+    // $(".div1").tap(function(){ //绑定事件 移动端点击屏幕
+    //   console.log("tap");
+    // })
+    // $(".div1").click(function(){ //绑定事件 移动端点击屏幕
+    //   console.log("click");
+    // })
+    $(".div1").on("swipeLeft",function(){ //左滑
+      console.log("left");
+      
+    })
+  </script>
+</body>
+</html>

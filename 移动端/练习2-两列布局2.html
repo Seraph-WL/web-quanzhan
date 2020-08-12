@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    .box{
+      display: flex; /*弹性布局*/
+    }
+    .div1{
+      /* width: 200px; */
+      flex-basis: 200px;  /*占当前主轴大小(横向是宽度纵向是高度)*/
+      height: 400px;
+      background-color: blue;
+      float: left;
+    }
+    .div2{
+      flex-grow: 1; /*放大比例 主轴方向所有剩余空间占满*/
+      height: 400px;
+      background-color: red;
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="div1">
+      left
+    </div>
+    <div class="div2">
+      right（flex）
+    </div>
+  </div>
+</body>
+</html>

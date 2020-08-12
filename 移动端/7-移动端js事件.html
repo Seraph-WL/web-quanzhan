@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var oBox = document.querySelector(".box");
+    oBox.ontouchstart = function(){ //手指触碰屏幕
+      console.log("touchstart");
+    }
+    oBox.ontouchmove = function(){ //手指滑动屏幕
+      console.log("touchmove")
+    }
+    oBox.ontouchend = function(e){ //手指离开屏幕
+      console.log("touchend");
+      console.log(e);
+      
+    }
+    // oBox.ontouchcancel = function(){
+
+    // 来电话 其他进程处于后台
+    // }
+  </script>
+</body>
+</html>

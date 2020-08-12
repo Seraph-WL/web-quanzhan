@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+    }
+    .container{
+      margin:0 200px; /*帮助center在中间*/
+    }
+    .center{
+      height: 400px;
+      width: 100%;
+      background-color: blue;
+      float: left;
+    }
+    .left,.right{
+      height: 400px;
+      width: 200px;
+      float: left;
+    }
+    .left{
+      background-color: red;
+      margin-left: -100%; /*上去*/
+      position: relative;
+      left:-200px;
+    }
+    .right{
+      background-color: yellow;
+      margin-left: -200px; /*上去*/
+      position: relative;
+      right: -200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 中间重要，先渲染中间 -->
+    <div class="center"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>
