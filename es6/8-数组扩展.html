@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script>
+    let aLi = document.querySelectorAll("li");
+    // console.log(aLi);
+    // console.log(Array.prototype.slice.call(aLi,0)); //从0开始类数组转为数组
+    // console.log(Array.from(aLi)); //类数组转为数组
+
+    // let obj = {
+    //   "0":"商品1",
+    //   "1":"商品2",
+    //   "2":"商品3",
+    //   "3":"商品4",
+    //   length:4 //一定要加(转数组)
+    // }
+    // console.log(Array.from(obj)); //类数组转为数组
+
+    // console.log(Array.of(1,true,null,{name:"a"})); // 一组值转为数组
+    
+    // var arr = [1,2,3,4,5,6,7,8,9];
+    // console.log(arr.copyWithin(4,5,8)); //输出[1,2,3,4,6,7,8,8,9] 
+    // copyWithin()方法，会接收三个参数，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组
+    // target（必需）：从该位置开始替换数据。如果为负值，表示倒数。
+    // start（可选）：从该位置开始读取数据，默认为 0。如果为负值，表示从末尾开始计算。
+    // end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示从末尾开始计算。
+    
+    // let arr = [1,2,3,4,5,6,7,8,9];
+    // let num = arr.find(function(val,index,arr){
+    //   // console.log(val,index,arr); //find方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。
+    //   if(val>5){  
+    //     return true
+    //   }
+    // })
+    // console.log(num); //返回6
+    //find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，
+    // 所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。
+    // 如果没有符合条件的成员，则返回undefined。
+
+
+    // let arr = [1,2,3,4,5,6,7,8,9];
+    // let num = arr.findIndex(function(val,index,arr){ //findIndex与find区别是查找索引
+    //   // console.log(val,index,arr);
+    //   if(val>5){
+    //     return true
+    //   }
+    // })
+    // console.log(num); //返回5
+
+    // let arr = ["a","b","c","d","e"];
+    // console.log(arr.fill("xx",1,3)); //fill方法从 1 号位开始，向原数组填充 "xx"，到 3 号位之前结束。
+
+    // let arr = new Array(3).fill("ab"); //填充空数组3个"ab"
+    // console.log(arr);
+
+    // let arr = ["a","b","c","d","e"];
+    // console.log(arr.includes("z")); //返回一个布尔值，表示某个数组是否包含给定的值
+    
+    // let arr = ["a","b","c","d","e"];
+    // for(let i = 0;i<arr.length;i++){
+    //   console.log(arr[i]);
+    // }
+
+    // for(let val of arr){ //for (变量 of 数组) 遍历循环
+    //   console.log(val);
+    // }
+    // for(let key of arr.keys()){  //keys()是对键名的遍历 索引
+    //   console.log(key);
+    // }
+    // for(let [key,val] of arr.entries()){ //entries()是对键值对的遍历
+    //   console.log(key,val); //values()是对键值的遍历
+    // }
+
+    // let arr = ["a","b","c","d","e"];
+    // arr.forEach(function(val,index,arr){ //forEach就是个循环遍历
+    //   console.log(val,index,arr);
+    // })
+
+    // let newArr = arr.map(function(val,index,arr){  //map与forEach相比有返回值 不返回输出undefined
+    //   // console.log(val,index,arr);
+    //   if(val == "c"){
+    //     return "hello"+val
+    //   }else{
+    //     return "fellow"+val;
+    //   }
+    // })
+    // console.log(newArr);
+
+    // let newArr = arr.map(function(val,index,arr){
+    //   console.log(val,index,arr);
+    //   if(val != "c"){
+    //     return val;
+    //   }
+    // })
+    // console.log(newArr);
+
+    // let newArr = arr.filter(function(val,index,arr){ //filter:返回一个符合条件的数组
+    //   console.log(val,index,arr);
+    //   if(val != "c"){
+    //     return val;
+    //   }
+    // })
+    // console.log(newArr);
+
+    // let arr = [1,2,3,4,5,6,7,8,9];
+    // let isHas = arr.some(function(val,index,arr){ //some:判断是否有元素是否符合条件 返回布尔值
+    //   return val>5
+    //   // if(val>6){
+    //   //   return true
+    //   // }
+    // })
+    // let isHas = arr.every(function(val,index,arr){ //every:判断每个元素是否符合条件 返回布尔值 全部符合才返回true
+    //   return val>0
+    // })
+    // console.log(isHas);
+    
+    let arr = [1,2,3,4,5,3,2,4,7];
+
+    
+    
+    
+    
+    
+    
+  </script>
+</body>
+</html>

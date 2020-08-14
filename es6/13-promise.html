@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+  <script>
+    // Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。
+
+    //回调地狱  避免使用这种嵌套
+    // $.get("./data/a.json",function(res){ //终端里 cd es6   live-server才能访问
+    //   console.log(res);
+    //   $.get("./data/b.json",function(res){
+    //     console.log(res);
+    //     $.get("./data/c.json",function(res){
+    //       console.log(res);
+    //     })
+    //   })
+    // })
+
+
+    // resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），
+    // 在异步操作成功时调用，并将异步操作的结果，作为参数传递出去
+    // reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），
+    // 在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。
+    // let pro1 = new Promise(function(resolve,reject){
+    //   setTimeout(function(){
+    //     // resolve("成功！");
+    //     reject("失败");
+    //   },1000)
+    // })
+    // Promise实例生成以后，可以用then方法分别指定resolved状态和rejected状态的回调函数。
+    // pro1.then(function(res){ //成功是用then
+    //   console.log(res);
+    // }).catch(function(res){
+    //   console.log(res);
+    // })
+    // pro1.catch(function(res){ //catch:指定发生错误时的回调函数
+    //   console.log(res);
+    // })
+    // then方法可以接受两个回调函数作为参数。
+    // 第一个回调函数是Promise对象的状态变为resolved时调用，第二个回调函数是Promise对象的状态变为rejected时调用。
+    // 其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
+    // pro1.then(function(res){
+    //   console.log(res);
+    // },function(res){
+    //   console.log(res);
+    // })
+
+
+    // promise解决地狱回调
+    // function getData(url){
+    //   return new Promise(function(resolve,reject){
+    //     $.get(url,function(res){
+    //       resolve(res)
+    //     })
+    //   })
+    // }  
+    // getData("./data/a.json").then(function(res){
+    //   console.log(res);
+    //   return getData("./data/b.json") //return才知道是promise对象
+    // }).then(function(res){  //then方法返回的是一个新的Promise实例
+    //   console.log(res);
+    //   return getData("./data/c.json")
+    // }).then(function(res){
+    //   console.log(res);
+    // })
+
+
+
+    // let prom1 = new Promise(function(resolve,reject){
+    //   $.get("./data/a.json",function(res){
+    //     resolve(res);
+    //   })
+    // })
+    // let prom2 = new Promise(function(resolve,reject){
+    //   $.get("./data/b.json",function(res){
+    //     reject(res);
+    //   })
+    // })
+    // let prom3 = new Promise(function(resolve,reject){
+    //   $.get("./data/c.json",function(res){
+    //     resolve(res);
+    //   })
+    // })
+    // Promise.all()方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。
+    // Promise.all([prom1,prom2,prom3]).then(function(res){
+    //   console.log("成功!"); //全部请求成功才会成功
+    // }).catch(function(res){
+    //   console.log("失败!");
+      
+    // })
+
+    let prom1 = new Promise(function(resolve,reject){
+      $.get("./data/a.json",function(res){
+        resolve(res);
+      })
+    })
+    let prom2 = new Promise(function(resolve,reject){
+      $.get("./data/b.json",function(res){
+        reject(res);
+      })
+    })
+    let prom3 = new Promise(function(resolve,reject){
+      $.get("./data/c.json",function(res){
+        resolve(res);
+      })
+    })
+    // Promise.race()方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。
+    Promise.race([prom1,prom2,prom3]).then(function(res){
+      console.log("成功"); //第一个请求成功才会成功
+    }).catch(function(res){
+      console.log("失败");
+      
+    })
+
+
+  </script>
+</body>
+</html>

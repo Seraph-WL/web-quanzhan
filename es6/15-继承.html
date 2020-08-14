@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 构造函数
+    // function Person(name,age){
+    //   this.name = name;
+    //   this.age = age;
+    // }  
+    // Person.prototype.showName = function(){ //构造函数原型上加方法
+    //   console.log(this.name);
+    //   // console.log("com");
+      
+    // }
+    // let student = new Person("xiao a","18");
+    // console.log(student.name);
+    // student.showName();
+
+    //构造继承 仅能继承属性
+    // function Teachter(name,age,school){
+    //   Person.call(this,name,age) //call():第一个参数表示修改person的this指向
+    //   this.school = school; //私有属性
+    // }
+    // let teacher1 = new Teachter("老李",30,"农大")
+    // console.log(teacher1.school);
+    // teacher1.showName();
+
+    //原型继承 仅能继承当前的原型
+    // function Teacher(name,age){
+    //   this.name = name;
+    //   this.age = age;
+    // }
+    // Teacher.prototype = new Person("小王",20);
+    // let teacher1 = new Teacher();
+    // teacher1.showName();
+
+    //组合继承
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+    Person.prototype.showName = function(){
+      console.log(this.name);
+    }
+    function Teacher(name,age){
+      Person.call(this,name,age);
+    }
+    Teacher.prototype = new Person();
+    Teacher.prototype.constructor = Teacher; //使构造函数指向自己，不指向person
+
+    let teacher1 = new Teacher("小王",20);
+    console.log(teacher1.name);
+    teacher1.showName()
+    console.log(teacher1.__proto__.constructor); //获取实例化对象的原型 得到其构造函数
+    
+  </script>
+</body>
+</html>

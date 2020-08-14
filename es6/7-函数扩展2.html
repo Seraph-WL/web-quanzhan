@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var foo = function(){
+      
+    // }
+    // function foo2(){
+
+    // }
+    // function foo(a,b){
+    //   return a+b;
+    // }
+    // console.log(foo(1,3));
+    
+
+    // 如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用return语句返回
+    //// var foo = (a,b) => { //如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分
+    ////   return a+b
+    //// }
+    // var foo = (a,b) => a+b;
+    // console.log(foo(1,4));
+
+    // 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号，否则会报错
+    // // 报错
+    // let getTempItem = id => { id: id, name: "Temp" };
+
+    // // 不报错
+    // let getTempItem = id => ({ id: id, name: "Temp" });
+
+
+    // var name = "xiao a"  
+    // var obj = {
+    //   name:"小明",
+    //   showName:function(){
+    //     function foo(){
+    //       console.log(this.name); //this指向全局变量
+    //     }
+    //     foo()
+    //   }
+    // }
+    // obj.showName(); //输出xiao a
+
+    // var name = "xiao a"  
+    // var obj = {
+    //   name:"小明",
+    //   showName:function(){
+    //     //箭头函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+    //     //（或者可以理解为箭头函数没有this）
+    //     let foo=()=>{
+    //       console.log(this.name);
+    //     }
+    //     foo()
+    //   }
+    // }
+    // obj.showName();
+
+    // function Person(name){
+    //   this.name = name;
+    // }
+
+    // var teacher = new Person("小王");
+    // console.log(teacher.name);
+
+
+    // let Person = (name)=>{
+    //   this.name = name; //内部无this 报错 
+    // }
+
+    // var teacher = new Person("小王");
+    // 箭头函数中不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误
+    // console.log(teacher.name);
+    
+    // let foo = ()=>{
+    //   console.log(arguments); //箭头函数中不包含arguments 报错
+    // 不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
+    // }
+    // foo(1,2)
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let obj = {
+    //   name:"小明",
+    //   age:18
+    // }
+
+    // let userName = "小明";
+    // let age = 18;
+
+    // let obj = {
+    //   userName:userName,
+    //   age:age
+    // }
+    // let obj = { //属性简写
+    //   userName,
+    //   age
+    // }
+    // console.log(obj);
+
+
+    // let obj = {
+    //   name:"小明",
+    //   showName(){
+    //     console.log(this.name);
+    //   }
+    // }
+    // obj.showName()
+    // let s = "school";
+    // let obj = {
+    //   name:"小明",
+    //   namea:"小a",
+    //   age:18,
+    //   [s]:"林大"
+    // }
+    // let userName = "name"
+    // console.log(obj[userName+"a"]); //属性用变量加字符串的表示
+    // console.log(obj);
+
+    // let obj = {}
+    // let obj1 = {}
+    // let obj = {}
+    // let obj1 = obj;
+    // console.log(Object.is(obj,obj1)); //Object.is(obj,obj1):比较两个值是否严格相等
+
+    // console.log(Object.is("1",1));
+
+    // console.log(-0 === +0); //返回true  ===:严格比较运算符
+    // console.log(Object.is(-0,+0)); //返回false
+    // console.log(NaN === NaN);  //返回false
+    // console.log(Object.is(NaN,NaN)); //返回true
+
+    // let obj1 = {
+    //   name:"小明",
+    //   age:14
+    // }
+    // let obj2 = {
+    //   age:18
+    // }
+    // let obj3 = {
+    //   school:"黑大"
+    // }
+
+    // console.log(Object.assign(obj2,obj1,obj3));  //对象合并 第一个参数是目标对象 后面是源对象 后面覆盖前面(属性一样)
+
+    // let obj = {
+    //   name:"xiao a"
+    // }
+    // console.log("name" in obj); //是否包含这个属性 返回布尔值
+
+    // let obj = {
+    //   name:"xiao a",
+    //   age:18,
+    //   school:"林大",
+    //   sex:"男"
+    // }
+    // delete obj.sex; //删除
+    // obj.sum = 100
+    // for(let item in obj){ //遍历对象的属性 key值
+    //   console.log(item);
+    // }
+
+    // let arr = [1,2,3,4,5]
+    // console.log(2 in arr);
+
+    // function Person(){
+    //   this.name = "小明";
+    // }
+    // Person.prototype.age = 12; //原型
+
+    // let student = new Person();
+
+    // console.log("name" in student);
+    // console.log(student.hasOwnProperty("name")); //判断当前对象是否包含该属性
+
+    // console.log(student.age);
+    // console.log("age" in student); //可以到原型及上面去找 返回true
+    // console.log(student.hasOwnProperty("age")); //仅在当前构造函数内部去查找 返回false
+    
+  </script>
+</body>
+</html>

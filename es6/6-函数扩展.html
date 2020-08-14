@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function foo([a,b=2]){  //参数默认值可以与解构赋值的默认值，结合起来使用。
+    //   console.log(a,b);
+    // }  
+    // foo([1,3]) //解构
+
+
+    // function foo(a,b=2){  //允许为函数的参数设置默认值，即直接写在参数定义的后面
+    //   console.log(a,b);
+    // }
+    // foo(1,3)
+
+    // function foo(a=2,b){ //默认值参数是从后往前一个个写的
+    //   console.log(a,b);
+    // }
+    // foo(1,3)
+
+    // function foo(a,b,c=1){
+    //   console.log(foo.length); //没传默认值的个数 
+    // }
+    // foo(1,2,3)
+
+    // function foo(){
+    //   console.log(foo.name); //输出name
+    // }
+    // foo()
+
+    // var foo = function foo2(){
+    //   console.log(foo.name);
+    // }
+    // foo() //输出foo2
+
+    // let声明的变量不在window下 var的是
+    // let a = 10; 
+    // console.log(window.a); //输出undefined
+    // 'use strict' //严格模式 全局变量必须显示声明
+    // a = 10; //报错
+    // console.log(a);
+
+    // function foo(){
+    //   console.log(this); //严格模式 this不能指向全局对象 构造函数必须使用new
+    // }
+    // foo()
+
+    // function Person(name){
+    //   this.name = name; //严格模式 this不能指向全局对象 构造函数必须使用new
+    // }
+    // Person("xiao a");
+    // var person2 = new Person("小明");
+
+    // function foo(a,a,b){ //严格模式 函数不能有重名的参数
+    //   console.log(a,b); //输出 2 3 
+    // }
+    // foo(1,2,3);
+
+    // var obj = {
+    //   name:"xiao a"
+    // }
+    // var name = "xiao b"
+    // with(obj){ //严格模式 禁止使用with
+    //   function foo(){
+    //     console.log(name);
+    //   }
+    // }
+    // foo(),call(obj) //输出 xiao a 未加with时 换成console.log(this.name)
+    // foo() //输出 xiao b
+
+    // function foo(num){
+    //   if(num == 1){
+    //     return 1
+    //   }else{  //严格模式 不允许使用arguments.callee
+    //     return num * arguments.callee(num-1) //arguments.callee:递归
+    //   }
+    // }
+    // console.log(foo(10));
+
+    // function foo(){
+    //   'use strict'  //规定只要函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错
+    //   let a = 10;
+    // }
+    // b = 10
+    // foo()
+    
+  </script>
+</body>
+</html>

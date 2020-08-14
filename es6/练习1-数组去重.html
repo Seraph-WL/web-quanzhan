@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [1,4,2,3,2,4,2,3,5];
+    //[1,2,2,3,3,4,4,5];
+
+    //方案一 includes 和 新数组
+    // function unique(arr){
+    //   let newArr = [];
+    //   for(let val of arr){
+    //     if(!newArr.includes(val)){
+    //       newArr.push(val);
+    //     }
+    //   }
+    //   return newArr
+    // }
+
+    //方案二 利用 排序 和 新数组
+    // function unique(arr){
+    //   let newArr = [];
+    //   arr = arr.sort(function(a,b){ //sort():自动排序
+    //     return a-b; //升序a-b 降序b-a
+    //   })
+    //   newArr[0] = arr[0];
+    //   for(let i = 1;i<arr.length;i++){
+    //     if(arr[i] != arr[i-1]){
+    //       newArr.push(arr[i]);
+    //     }
+    //   }
+    //   return newArr;
+    // }
+    
+    //方案三 利用对象属性名称不能重复
+    // function unique(arr){
+    //   let newArr = [];
+    //   let obj = {};
+    //   arr.map(function(val,index){
+    //     if(!(val in obj)){
+    //       obj[val] = 1; //对象属性为变量时用中括号
+    //       newArr.push(val);
+    //     }else{
+    //       obj[val]++
+    //     }
+    //   })
+    //   return newArr      
+    // }  
+
+    // eg
+    // var obj = {
+    //   name:"aa"
+    // }
+    // console.log("name" in obj); //判断当前对象是否包含该name属性
+
+    //方案四 利用filter 
+    // function unique(arr){
+    //   let newArr = [];
+    //   newArr = arr.filter(function(val,index){ //filter:返回一个符合条件的数组
+    //     if(arr.indexOf(val) == index){ //indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置
+    //       return val
+    //     }
+    //   })
+    //   return newArr;
+    // }
+
+    //方案五 利用set
+    function unique(arr){
+      let newArr = new Set(arr);
+      return Array.from(newArr); //转换真实数组
+    }
+
+    console.log(unique(arr));
+  </script>
+</body>
+</html>

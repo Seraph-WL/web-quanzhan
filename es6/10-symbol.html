@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，
+    // 前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）
+    // Symbol函数前不能使用new命令，否则会报错。这是因为生成的 Symbol 是一个原始类型的值，不是对象
+    let namea = Symbol();
+    let obj = {
+      name:"小明",
+      age:18,
+      [namea]:"小a"
+    }
+    for(let item in obj){
+      console.log(item);
+    }
+    // ymbol 作为属性名，遍历对象的时候，该属性不会出现在for...in、for...of循环中，
+    // 也不会被Object.keys()、Object.getOwnPropertyNames()、JSON.stringify()返回。
+    // console.log(obj[namea]); //在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在方括号之中。
+    
+  </script>
+</body>
+</html>

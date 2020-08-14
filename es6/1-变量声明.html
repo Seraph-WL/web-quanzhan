@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+  </ul>
+  <script>
+    var aLi = document.querySelectorAll("li");
+
+    // for(var i=0;i<aLi.length;i++){
+    //   aLi[i].index = i;
+    //   aLi[i].onclick = function(){
+    //     console.log(this.index);
+    //   }
+    // }
+
+    // for(var i=0;i<aLi.length;i++){
+    //   (function(index){  //闭包 内部函数访问外部函数局部变量
+    //     aLi[index].onclick = function(){
+    //       console.log(index);
+    //     }
+    //   })(i)  //(i)也是一个函数 这里是外部函数
+    // }
+
+    // for(let i=0;i<aLi.length;i++){ //let 块级作用域
+    //   aLi[i].onclick = function(){
+    //     console.log(i);
+    //   }
+    // }
+
+
+    // function foo(){
+    //   str = "hello"; //默认是全局变量
+    // }
+    // foo()
+    // console.log(str); //正常输出
+    
+    
+
+
+    // var str = "hello";  
+    // var str = "abc"; 
+
+    // let str = "hello"; //let 变量不允许重复声明
+    // let str = "abc";
+    // console.log(str);
+
+    // console.log(str);
+    // var str = "hello"; //变量提升
+
+    // console.log(str);  //let 暂时性死区(不能在未定义之前使用，也就是不存在变量提升)
+    // let str = "hello"; //let 不存在变量提升
+
+    // function foo(){
+    //   var i = 0;
+    // }
+
+
+    // function foo(){
+    //   var i = 0;
+    //   function foo2(){ //i不释放 闭包 为了实现块级作用域
+    //     i++
+    //   }
+    // }
+
+
+    // var foo2 = null;
+    // function foo(){
+    //   var str = 0; //str未被释放
+    //   foo2 = function(){
+    //     str++
+    //   }
+    //   return function(){
+    //     return str;
+    //   }
+    // }
+    // var foo3 = foo(); //返回是一函数（因为return function）该函数未被执行
+    // foo2();
+    // foo2();
+    // console.log(foo3()); //输出2
+
+
+    // for(let i = 0;i<10;i++){ //let 块级作用域 只在大括号里生效
+    //   console.log(i);
+    // }
+    // console.log(i);
+    
+    // if(true){ //let 块级作用域
+    //   let a = 10;//相当于局部变量
+    // }
+    // console.log(a); //报错 ，没定义
+    
+    // let str = "hello";
+    // str = 10;
+    // console.log(str);
+
+    // const str = "hello"; //const:声明一个只读的常量，一旦声明，值不变(实际上指变量地址不变)
+    // str = 10;
+    // console.log(str);
+
+    // const obj = {
+    //   name:"小明"
+    // }
+    // var obj2= {};
+    // obj = obj2; //不允许(改地址 占内存)
+
+    // obj.name = "xiao A"; //允许改
+
+    // console.log(obj);
+    
+
+    
+    
+    
+    
+    
+  </script>
+</body>
+</html>

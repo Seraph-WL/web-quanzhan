@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // Map 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键
+    // let mapObj = new Map();
+    // mapObj.set("name","小明1"); //(key,value) set方法设置键名key对应的键值为value，然后返回整个 Map 结构。
+    // mapObj.set("name2","小明2");
+    // mapObj.set("name3","小明3");
+    // console.log(mapObj.get("name2")); //(key)读取 get方法读取key对应的键值，如果找不到key，返回undefined。
+    // mapObj.delete("name2"); //(key)删除 delete方法删除某个键，返回true。如果删除失败，返回false
+
+    // console.log(mapObj);
+    // for(let [item,val] of mapObj.entries()){
+    //   console.log(item,val);
+    // }
+    // Map.prototype.keys()：返回键名的遍历器。
+    // Map.prototype.values()：返回键值的遍历器。
+    // Map.prototype.entries()：返回所有成员的遍历器。
+    // Map.prototype.forEach()：遍历 Map 的所有成员
+
+    // let wmObj = new WeakMap();
+    // wmObj.set({name:"a"},"xiao a");
+    // console.log(wmObj);
+    // WeakMap只接受对象作为键名（null除外），不接受其他类型的值作为键名。
+    // WeakMap的键名所指向的对象，不计入垃圾回收机制
+    // 一旦不再需要，WeakMap 里面的键名对象和所对应的键值对会自动消失，不用手动删除引用。
+    // 一个典型应用场景是，在网页的 DOM 元素上添加数据，就可以使用WeakMap结构。
+    
+  </script>
+</body>
+</html>
