@@ -9,4 +9,4 @@ class Person{
     console.log(this.name);
   }
 }
-export default Person;
+export default Person;  //用于单个对象或方法
