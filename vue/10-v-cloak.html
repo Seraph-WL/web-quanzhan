@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- v-cloak:渲染完成后显示 所在元素加载成功以后会被移除 代码优化 -->
+  <div id="app">
+    <div v-cloak>
+      {{num}}
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        num:0
+      }
+    })
+  </script>
+</body>
+</html>

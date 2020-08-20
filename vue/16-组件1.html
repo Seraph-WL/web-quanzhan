@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <fellow></fellow>
+    <hello></hello>
+    <fellow></fellow>
+  </div>
+  <div id="box">
+    <hello></hello>
+  </div>
+  <script>
+    // 全局组件
+    // component:标签 第一个参数:名称 第二个参数:对象
+    Vue.component("hello",{
+      // template:模板
+      // template:"<div><h1>fellow41</h1><h1>hello world!</h1></div>"  //只能有一个根标签
+      // ``:可以换行写
+      template:`
+      <div>
+        <div>hello</div>
+        <div>world</div>
+      </div>
+      `
+    })
+  
+    // 局部组件
+    new Vue({
+      el:"#app",
+      components:{
+        fellow:{
+          template:`
+            <div>
+              <h1>fellow41</h1>  
+            </div>
+          `
+        }
+      }
+    })
+    new Vue({
+      el:"#box"
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <input type="text" v-model="firstName">
+    <input type="text" v-model="lastName">
+    <div>
+      {{firstName}}+{{lastName}} = {{fullName}}
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        firstName: 'Foo',
+        lastName: 'Bar',
+        // fullName: 'Foo Bar'
+      },
+      // 计算属性  computed擅长处理的场景:一个数据受多个数据影响
+      computed: {
+        fullName(){
+          return this.firstName + this.lastName;
+        }
+      },
+    })
+  </script>
+</body>
+</html>

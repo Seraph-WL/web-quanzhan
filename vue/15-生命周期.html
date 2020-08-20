@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>{{num}}</h1>
+    <button v-on:click="addHandle">add</button>
+    <button v-on:click="disHandle">destroy</button>
+  </div>
+
+  <!-- 生命周期也称钩子函数 -->
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        num:0
+      },
+      methods: {
+        addHandle(){
+          ++this.num;
+        },
+        disHandle(){
+          this.$destroy();
+        }
+      },
+      // 创建
+      beforeCreate() {
+        console.log("beforeCreate");
+      },
+      created() {
+        console.log("created");
+      },
+      // 挂载DOM
+      beforeMount() {
+        console.log("beforeMount");
+      },
+      mounted() {
+        console.log("mounted");
+      },
+      // 更新
+      beforeUpdate() {
+        console.log("beforeUpdate");
+      },
+      updated() {
+        console.log("updated");
+      },
+      // 销毁vue实例化对象
+      beforeDestroy() {
+        console.log("beforeDestroy");
+      },
+      destroyed() {
+        console.log("destroyed");
+      },
+    })
+  </script>
+</body>
+</html>

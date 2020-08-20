@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+
+<body>
+  <!-- is可切换不同组件 -->
+  <div id="app">
+    <div v-bind:is="witchCom"></div>
+    <com1 v-on:click.native="clickHandle"></com1>
+    <!-- .native:给组件绑定事件 监听组件根元素的原生事件 -->
+  </div>
+  <template id="tem1">
+    <div>
+      <h1>hello world!</h1>
+    </div>
+  </template>
+  <template id="tem2">
+    <div>
+      <h1>你好世界！</h1>
+    </div>
+  </template>
+  <script>
+    Vue.component("com1", {
+      template: "#tem1"
+    })
+    Vue.component("com2", {
+      template: "#tem2"
+    })
+    new Vue({
+      el: "#app",
+      data: {
+        witchCom:"com2"
+      },
+      methods: {
+        clickHandle(){
+          console.log("com")
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

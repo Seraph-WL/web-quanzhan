@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <!-- 父组件 -->
+  <div id="app">
+    <h1>父组件中的名字:{{uName}}</h1>
+   <fellow :username="uName" v-on:childchangename="parentChangeName"></fellow>
+   <button @click="changeUname">父组件修改名字</button>
+   <fellow2 :username.sync="uName"></fellow2>
+   <!-- .sync:表示异步 -->
+  </div>
+  
+  <script>
+    new Vue({
+      el:"#app",
+      data:{
+        uName:"小明"
+      },
+      methods: {
+        changeUname(){
+          this.uName = "小刚"
+        },
+        parentChangeName(newName){
+          this.uName = newName;
+        }
+      },
+      components:{
+        fellow2:{
+          props:["username"], //组件传参
+          // 子组件
+          template:`
+          <div>
+              <h1>我的名字是:{{username}}</h1> 
+              <button @click="changeUserName">fellow2子组件修改名字</button> 
+            </div>
+          `,
+          // 参数中带-，去掉横杠，后面首字母大写
+          methods: {
+            changeUserName(){
+              this.$emit('update:username',"小红")  //update:修改属性值
+            } 
+          }
+        },
+        fellow:{
+          props:["username"], //组件父传子传参
+          // 子组件
+          template:`
+            <div>
+              <h1>我的名字是:{{username}}</h1> 
+              <button @click="changeUserName">子组件修改名字</button> 
+            </div>
+          `,
+          methods: {
+            changeUserName(){
+              // console.log(this.username);
+              // this.username = "aa"  //这么改不被允许
+              this.$emit("childchangename","小亮");  //发起诉求 组件子传父
+            } 
+          }
+        }
+      }
+    })
+
+    // function foo(str){
+    //   console.log("fellow41"+str);
+    // }
+    // foo("hello");
+    // foo("world");
+  </script>
+</body>
+</html>
