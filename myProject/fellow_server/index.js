@@ -14,8 +14,8 @@ const router = new Router({
 
 //小程序初始化
 cloud.init({
-  secretId:"AKIDLeEwNXn81jA2gDMThdIkw96mgJfoLRpw",
-  secretKey:"zg6FCuKTN0NSG55oO8j6BzWmmbAYhY8W",
+  secretId:"AKIDc3Eh5OUVLUQ7yfpOVLzxgVM0QZRvmF4u",
+  secretKey:"mJFBvQfolqn2MSP7Z3PYxDmYmTuBzbAW",
   env:"hljsysbqxczqls-it4gn"
 })
 
